@@ -22,6 +22,13 @@ import {
 import { Platform } from "react-native";
 
 import { log, logError } from "@/lib/log";
+import {
+  approxTokens,
+  now as perfNow,
+  recordCompletion,
+  recordEmbedding,
+  recordModel,
+} from "@/lib/perf";
 import { usePromptSettings } from "@/hooks/use-prompt-settings";
 
 export type QvacStatus =
@@ -33,10 +40,23 @@ export type QvacStatus =
   | "error";
 
 const MODEL_LABEL = "Llama 3.2 1B";
+const EMBED_LABEL = "GTE-Large";
 // Context window for the model. Must hold the cleaned email body + the
 // instruction prompt + the generated summary; email bodies are capped in
 // gmail.ts (MAX_BODY_CHARS) to stay well under this.
 const CTX_SIZE = 4096;
+
+// Engine-job priorities (higher runs first). Model loads are user-triggered and
+// block a whole feature, so they preempt the stream of background completions.
+const PRIORITY_NORMAL = 0;
+const PRIORITY_LOAD = 1;
+
+type EngineJob = {
+  task: () => Promise<unknown>;
+  priority: number;
+  resolve: (value: unknown) => void;
+  reject: (reason: unknown) => void;
+};
 
 type QvacValue = {
   status: QvacStatus;
@@ -57,10 +77,12 @@ type QvacValue = {
     text: string,
     shouldRun?: () => boolean,
   ) => Promise<string | null>;
-  /** Run an arbitrary prompt through the LLM (used by the RAG chat, TODO #13). */
+  /** Run an arbitrary prompt through the LLM (used by the RAG chat, TODO #13).
+   *  `label` tags the call in the performance log. */
   complete: (
     prompt: string,
     shouldRun?: () => boolean,
+    label?: string,
   ) => Promise<string | null>;
   /** Lifecycle of the embeddings model, loaded lazily on first RAG use. */
   embeddingStatus: EmbeddingStatus;
@@ -88,8 +110,52 @@ export function QvacProvider({ children }: PropsWithChildren) {
   const [progress, setProgress] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const modelId = useRef<string | null>(null);
-  // Promise chain that serializes completions so only one runs at a time.
-  const queue = useRef<Promise<unknown>>(Promise.resolve());
+  // The native engine processes ONE job at a time across *all* operations —
+  // completions, embeddings, and model loads (overlapping throws "Cannot set new
+  // job: a job is already set or being processed"). A small priority scheduler
+  // serializes every engine call. Priority matters because the inbox fires a
+  // steady stream of background completions (per-card triage/summary); without
+  // it, a user-triggered model load (e.g. the smart-search embeddings model)
+  // would queue behind all of them and appear stuck at 0%. The in-flight job
+  // can't be preempted — priority only reorders what's still waiting.
+  const pending = useRef<EngineJob[]>([]);
+  const draining = useRef(false);
+
+  // Enqueue an engine job. Higher `priority` runs first; ties keep FIFO order.
+  function enqueue<T>(task: () => Promise<T>, priority = PRIORITY_NORMAL): Promise<T> {
+    return new Promise<T>((resolve, reject) => {
+      const arr = pending.current;
+      // Insert ahead of any lower-priority jobs, after equal/higher ones (FIFO).
+      let i = arr.length;
+      while (i > 0 && arr[i - 1].priority < priority) i--;
+      arr.splice(i, 0, {
+        task: task as () => Promise<unknown>,
+        priority,
+        resolve: resolve as (value: unknown) => void,
+        reject,
+      });
+      void drain();
+    });
+  }
+
+  // Single pump: run queued jobs one at a time. Per-job try/catch keeps the loop
+  // alive even if a job rejects, so one failure never stalls the queue.
+  async function drain(): Promise<void> {
+    if (draining.current) return;
+    draining.current = true;
+    try {
+      while (pending.current.length > 0) {
+        const job = pending.current.shift()!;
+        try {
+          job.resolve(await job.task());
+        } catch (e) {
+          job.reject(e);
+        }
+      }
+    } finally {
+      draining.current = false;
+    }
+  }
 
   // Embeddings model (for RAG, TODO #13) — loaded lazily on first use.
   const [embeddingStatus, setEmbeddingStatus] =
@@ -138,19 +204,25 @@ export function QvacProvider({ children }: PropsWithChildren) {
       setStatus("loading");
       setProgress(0);
       log("qvac", "loadModel start", { device: "gpu", ctx_size: CTX_SIZE });
-      const id = await loadModel({
-        modelSrc: LLAMA_3_2_1B_INST_Q4_0,
-        modelType: "llm",
-        modelConfig: {
-          device: "gpu",
-          ctx_size: CTX_SIZE,
-          verbosity: VERBOSITY.ERROR,
-        },
-        onProgress: (p) => {
-          log("qvac", `load ${Math.round(p.percentage)}%`);
-          setProgress(Math.round(p.percentage));
-        },
-      });
+      const loadStart = perfNow();
+      const id = await enqueue(
+        () =>
+          loadModel({
+            modelSrc: LLAMA_3_2_1B_INST_Q4_0,
+            modelType: "llm",
+            modelConfig: {
+              device: "gpu",
+              ctx_size: CTX_SIZE,
+              verbosity: VERBOSITY.ERROR,
+            },
+            onProgress: (p) => {
+              log("qvac", `load ${Math.round(p.percentage)}%`);
+              setProgress(Math.round(p.percentage));
+            },
+          }),
+        PRIORITY_LOAD,
+      );
+      recordModel({ event: "load", model: MODEL_LABEL, durationMs: perfNow() - loadStart });
       log("qvac", "loadModel done", { modelId: id });
 
       modelId.current = id;
@@ -172,31 +244,56 @@ export function QvacProvider({ children }: PropsWithChildren) {
   async function runCompletion(
     prompt: string,
     shouldRun?: () => boolean,
+    label = "completion",
   ): Promise<string | null> {
     const id = modelId.current;
     if (!id || !prompt) return null;
-    const run = queue.current.then(async () => {
-      if (shouldRun && !shouldRun()) {
-        log("qvac", "completion skipped (no longer needed)");
-        return null;
-      }
-      log("qvac", "completion start", { chars: prompt.length });
-      const { completion } = await import("@qvac/sdk");
-      const result = completion({
-        modelId: id,
-        history: [{ role: "user", content: prompt }],
-        stream: true,
-      });
-      let acc = "";
-      for await (const token of result.tokenStream) acc += token;
-      const out = acc.trim();
-      log("qvac", "completion done", { chars: out.length });
-      return out;
-    });
-    // Keep the queue alive even if this run rejects.
-    queue.current = run.catch(() => undefined);
     try {
-      return await run;
+      return await enqueue(async () => {
+        if (shouldRun && !shouldRun()) {
+          log("qvac", "completion skipped (no longer needed)");
+          return null;
+        }
+        log("qvac", "completion start", { chars: prompt.length });
+        const { completion } = await import("@qvac/sdk");
+        const result = completion({
+          modelId: id,
+          history: [{ role: "user", content: prompt }],
+          stream: true,
+        });
+        // Measure time-to-first-token and decode rate for the perf log.
+        const startedAt = perfNow();
+        let firstTokenAt: number | null = null;
+        let tokens = 0;
+        let acc = "";
+        for await (const token of result.tokenStream) {
+          if (firstTokenAt === null) firstTokenAt = perfNow();
+          tokens++;
+          acc += token;
+        }
+        const endedAt = perfNow();
+        const out = acc.trim();
+        const ttftMs = firstTokenAt !== null ? firstTokenAt - startedAt : null;
+        // Decode rate = tokens generated AFTER the first, over the decode window.
+        // With ≤1 token there's no decode interval to measure, so report null
+        // rather than a meaningless number.
+        const decodeMs = firstTokenAt !== null ? endedAt - firstTokenAt : 0;
+        const tokensPerSec =
+          tokens > 1 && decodeMs > 0 ? ((tokens - 1) / decodeMs) * 1000 : null;
+        recordCompletion({
+          label,
+          model: MODEL_LABEL,
+          promptChars: prompt.length,
+          promptTokensApprox: approxTokens(prompt.length),
+          outputChars: out.length,
+          tokens,
+          ttftMs: ttftMs !== null ? Math.round(ttftMs) : null,
+          totalMs: Math.round(endedAt - startedAt),
+          tokensPerSec: tokensPerSec !== null ? Math.round(tokensPerSec * 10) / 10 : null,
+        });
+        log("qvac", "completion done", { chars: out.length, tokens, ttftMs, tokensPerSec });
+        return out;
+      });
     } catch (e) {
       logError("qvac", e, "(completion failed)");
       return null;
@@ -211,7 +308,7 @@ export function QvacProvider({ children }: PropsWithChildren) {
     // Instruction is user-editable in Settings; the email body is always
     // appended here so a custom prompt can't break body injection.
     const prompt = `${prompts.summary}\n\nEmail:\n${text}`;
-    return runCompletion(prompt, shouldRun);
+    return runCompletion(prompt, shouldRun, "summary");
   }
 
   // Load the embeddings model once (deduping concurrent callers via a ref).
@@ -235,14 +332,20 @@ export function QvacProvider({ children }: PropsWithChildren) {
         });
         setEmbeddingStatus("loading");
         setEmbeddingProgress(0);
-        const id = await loadModel({
-          modelSrc: GTE_LARGE_FP16,
-          modelType: "llamacpp-embedding",
-          onProgress: (p) => {
-            log("qvac", `embeddings load ${Math.round(p.percentage)}%`);
-            setEmbeddingProgress(Math.round(p.percentage));
-          },
-        });
+        const embedLoadStart = perfNow();
+        const id = await enqueue(
+          () =>
+            loadModel({
+              modelSrc: GTE_LARGE_FP16,
+              modelType: "llamacpp-embedding",
+              onProgress: (p) => {
+                log("qvac", `embeddings load ${Math.round(p.percentage)}%`);
+                setEmbeddingProgress(Math.round(p.percentage));
+              },
+            }),
+          PRIORITY_LOAD,
+        );
+        recordModel({ event: "load", model: EMBED_LABEL, durationMs: perfNow() - embedLoadStart });
         embedModelId.current = id;
         setEmbeddingProgress(null);
         setEmbeddingStatus("ready");
@@ -264,9 +367,19 @@ export function QvacProvider({ children }: PropsWithChildren) {
     const id = await ensureEmbedModel();
     if (!id) return null;
     try {
-      const { embed } = await import("@qvac/sdk");
-      const res = await embed({ modelId: id, text });
-      return res.embedding ?? null;
+      return await enqueue(async () => {
+        const { embed } = await import("@qvac/sdk");
+        const embedStart = perfNow();
+        const res = await embed({ modelId: id, text });
+        const embedding = res.embedding ?? null;
+        recordEmbedding({
+          model: EMBED_LABEL,
+          inputChars: text.length,
+          totalMs: Math.round(perfNow() - embedStart),
+          dims: embedding ? embedding.length : null,
+        });
+        return embedding;
+      });
     } catch (e) {
       logError("qvac", e, "(embed failed)");
       return null;
@@ -280,7 +393,9 @@ export function QvacProvider({ children }: PropsWithChildren) {
     if (id) {
       try {
         const { unloadModel } = await import("@qvac/sdk");
+        const unloadStart = perfNow();
         await unloadModel({ modelId: id, clearStorage: false });
+        recordModel({ event: "unload", model: MODEL_LABEL, durationMs: perfNow() - unloadStart });
         log("qvac", "unloadModel done");
       } catch (e) {
         logError("qvac", e, "(unload failed)");

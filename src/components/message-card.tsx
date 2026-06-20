@@ -11,7 +11,30 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Colors, Spacing } from '@/constants/theme';
 import { useEmailSummary } from '@/hooks/use-email-summary';
+import { type TriageCategory, useEmailTriage } from '@/hooks/use-email-triage';
 import type { GmailMessage } from '@/lib/gmail';
+
+// Color-coded triage pill. Meaning is carried by the label text (not color
+// alone); the accent shows as a tint + dot, with dark text for AA contrast.
+const TRIAGE: Record<TriageCategory, { label: string; color: string }> = {
+  priority: { label: 'Priority', color: Colors.accentRed },
+  newsletter: { label: 'News', color: Colors.secondary },
+  receipt: { label: 'Receipt', color: Colors.primary },
+  social: { label: 'Social', color: Colors.accentOrange },
+};
+
+function TriageChip({ category }: { category: TriageCategory }) {
+  const { label, color } = TRIAGE[category];
+  return (
+    <View
+      style={[styles.chip, { backgroundColor: `${color}1F` }]}
+      accessibilityLabel={`Category: ${label}`}
+    >
+      <View style={[styles.chipDot, { backgroundColor: color }]} />
+      <ThemedText style={styles.chipText}>{label}</ThemedText>
+    </View>
+  );
+}
 
 // "Display Name <addr@x.com>" → "Display Name"; falls back to the address.
 export function senderName(from: string): string {
@@ -20,6 +43,15 @@ export function senderName(from: string): string {
   const name = match?.[1]?.trim();
   if (name) return name;
   return match?.[2]?.trim() ?? from;
+}
+
+// "Display Name <addr@x.com>" → "addr@x.com"; falls back to a bare address.
+export function senderEmail(from: string): string {
+  if (!from) return '';
+  const angle = from.match(/<([^>]+)>/);
+  if (angle) return angle[1].trim();
+  const bare = from.match(/[^\s<>]+@[^\s<>]+/);
+  return bare ? bare[0] : '';
 }
 
 // First letter of the sender's name/address for the avatar.
@@ -60,6 +92,7 @@ function MessageCardImpl({ message, onPress }: { message: GmailMessage; onPress?
   const name = senderName(message.from);
   const date = formatDate(message.date);
   const { summary, loading: summarizing } = useEmailSummary(message);
+  const category = useEmailTriage(message);
 
   return (
     <Pressable
@@ -91,6 +124,7 @@ function MessageCardImpl({ message, onPress }: { message: GmailMessage; onPress?
                 {date}
               </ThemedText>
             ) : null}
+            {category ? <TriageChip category={category} /> : null}
           </View>
           <ThemedText type="small" numberOfLines={1} style={styles.subject}>
             {message.subject}
@@ -179,6 +213,26 @@ const styles = StyleSheet.create({
   },
   date: {
     flexShrink: 0,
+  },
+  chip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.half,
+    paddingHorizontal: Spacing.two,
+    paddingVertical: 3,
+    borderRadius: 999,
+    flexShrink: 0,
+  },
+  chipDot: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+  },
+  chipText: {
+    fontSize: 11,
+    lineHeight: 14,
+    fontWeight: '700',
+    color: Colors.text,
   },
   subject: {
     fontWeight: '600',

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "bundleId": "92ca7506925fac904960d14ce8dbf106db165db729e6e28d86af2e9be96bab3f",
+  "bundleId": "a3b1933cafa0f14f5f3c19fc8a077f3478992199bf0837407ad1ae9394bcc168",
   "addons": [
     "@qvac/bci-whispercpp",
     "@qvac/diffusion-cpp",

@@ -12,8 +12,8 @@ import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { WebView } from 'react-native-webview';
 
-import { EmailChat } from '@/components/email-chat';
 import { senderName } from '@/components/message-card';
+import { ReaderAI } from '@/components/reader-ai';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
@@ -112,7 +112,7 @@ export default function MessageScreen() {
               return true;
             }}
           />
-          <EmailChat emailId={content.id} bodyText={content.bodyText} />
+          <ReaderAI content={content} />
         </>
       ) : error ? (
         <View style={styles.centered}>

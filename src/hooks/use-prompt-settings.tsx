@@ -27,6 +27,36 @@ export const DEFAULT_PROMPTS = {
     'Summarize the following email in 2-4 sentences (about 40-60 words). ' +
     'Capture the key points, any action needed, and important details. ' +
     'Reply with only the summary, no preamble or quotes.',
+  /** Instruction for "Write with AI" in the Send tab (used by `buildDraftPrompt`). */
+  draft:
+    'You are helping write an email. Write a clear, friendly, professional email ' +
+    'body based on the instruction below. Reply with ONLY the email body text — ' +
+    'no subject line, no preamble, no quotes, no markdown.',
+  /** Instruction for the reply options in the reader (used by `useSmartReplies`). */
+  reply:
+    'You are helping reply to an email. Suggest 3 short, distinct reply options ' +
+    'the recipient could send back. Each reply is 1-2 sentences, polite and ' +
+    'natural, with no greeting or signature. Return each option on its own line, ' +
+    'with no numbering, bullets, or quotation marks.',
+  /** Instruction for the "summarize my unread" digest (used by `useUnreadDigest`). */
+  digest:
+    'You are summarizing the user’s unread inbox. Below are their unread emails. ' +
+    'Write a concise digest that prioritizes what matters and flags anything ' +
+    'needing a reply or action. Use short bullet points, mention the sender, and ' +
+    'keep it skimmable. Reply with only the digest.',
+  /** Instruction for extracting action items from an email (used by `useEmailActions`). */
+  actions:
+    'Extract the action items, tasks, deadlines and important dates from this ' +
+    'email. Reply with a short bullet list using "- ". If there are none, reply ' +
+    'with exactly: No action items.',
+  /** Instruction for translating an email (used by `useEmailTranslate`). */
+  translate:
+    'Translate the email below into the target language. Preserve the meaning and ' +
+    'tone, and reply with only the translation.',
+  /** Instruction for adjusting a draft’s tone in the Send tab (used by tone chips). */
+  tone:
+    'Rewrite the email body below in the requested tone. Keep the meaning and any ' +
+    'key details. Reply with ONLY the rewritten body — no preamble or quotes.',
 } as const;
 
 export type PromptKey = keyof typeof DEFAULT_PROMPTS;
@@ -35,7 +65,31 @@ export type Prompts = Record<PromptKey, string>;
 export const PROMPT_LABELS: Record<PromptKey, { title: string; help: string }> = {
   summary: {
     title: 'Email summary',
-    help: 'Instruction for the short summary shown on each inbox card.',
+    help: 'Instruction for the short summary shown on each inbox card. The email is added automatically.',
+  },
+  draft: {
+    title: 'AI draft (Send)',
+    help: 'Instruction for “Write with AI” in the Send tab. Your topic, recipient and subject are added automatically.',
+  },
+  reply: {
+    title: 'Reply suggestions',
+    help: 'Instruction for the reply options in the email reader. The email being replied to is added automatically.',
+  },
+  digest: {
+    title: 'Unread digest',
+    help: 'Instruction for the “Summarize unread” digest in the inbox. Your unread emails are added automatically.',
+  },
+  actions: {
+    title: 'Action items',
+    help: 'Instruction for “Action items” in the reader’s AI menu. The email is added automatically.',
+  },
+  translate: {
+    title: 'Translate',
+    help: 'Instruction for “Translate” in the reader’s AI menu. The target language and email are added automatically.',
+  },
+  tone: {
+    title: 'Adjust tone',
+    help: 'Instruction for the tone chips in the Send tab. The chosen tone and your draft are added automatically.',
   },
 };
 
@@ -77,9 +131,13 @@ export function PromptSettingsProvider({ children }: PropsWithChildren) {
           if (info.exists) {
             const saved = JSON.parse(await FileSystem.readAsStringAsync(FILE)) as Partial<Prompts>;
             if (!cancelled) {
-              setPrompts((p) => ({
-                summary: typeof saved.summary === 'string' ? saved.summary : p.summary,
-              }));
+              setPrompts((p) => {
+                const next = { ...p };
+                for (const key of Object.keys(DEFAULT_PROMPTS) as PromptKey[]) {
+                  if (typeof saved[key] === 'string') next[key] = saved[key] as string;
+                }
+                return next;
+              });
             }
           }
         }

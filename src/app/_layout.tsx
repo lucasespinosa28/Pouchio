@@ -6,6 +6,12 @@ import { Colors } from '@/constants/theme';
 import { GoogleAuthProvider } from '@/hooks/use-google-auth';
 import { PromptSettingsProvider } from '@/hooks/use-prompt-settings';
 import { QvacProvider } from '@/hooks/use-qvac';
+import { installDevPerfGuard } from '@/lib/dev-perf-guard';
+
+// Cap React's dev-only component-render performance-measure buffer so a long
+// session doesn't exhaust native memory (`std::bad_alloc`). Runs once at module
+// load, before any component renders. No-op in production.
+installDevPerfGuard();
 
 // Light-only navigation theme tinted with the Duo green brand color.
 const NavTheme = {

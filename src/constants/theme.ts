@@ -32,6 +32,8 @@ export const Colors = {
   primaryShadow: '#58A700',
   /** Sky blue — secondary actions, links, user chat bubble. */
   secondary: '#1CB0F6',
+  /** Darker blue for the 3D bottom edge of secondary (blue) buttons. */
+  secondaryShadow: '#1499D6',
   /** Streak orange. */
   accentOrange: '#FF9600',
   /** XP gold. */

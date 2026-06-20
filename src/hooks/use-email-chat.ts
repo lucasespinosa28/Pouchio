@@ -126,7 +126,7 @@ export function useEmailChat(emailId: string | undefined, bodyText: string | und
           'You are answering a question about an email. Use ONLY the email content ' +
           'below to answer. If the answer is not in the email, say you could not find ' +
           `it.\n\nEMAIL:\n"""\n${context}\n"""\n\nQUESTION: ${q}\n\nANSWER:`;
-        const answer = (await complete(prompt)) ?? 'Sorry, I could not generate an answer.';
+        const answer = (await complete(prompt, undefined, 'ask')) ?? 'Sorry, I could not generate an answer.';
         setMessages((prev) => [...prev, { id: makeId(), role: 'assistant', text: answer }]);
       } catch (e) {
         logError('chat', e, emailId);

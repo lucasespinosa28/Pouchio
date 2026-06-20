@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useLocalSearchParams } from 'expo-router';
+import { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   KeyboardAvoidingView,
@@ -16,6 +17,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, Colors, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useGoogleAuth } from '@/hooks/use-google-auth';
+import { usePromptSettings } from '@/hooks/use-prompt-settings';
 import { useQvac } from '@/hooks/use-qvac';
 import { useTheme } from '@/hooks/use-theme';
 import { GmailError, sendEmail } from '@/lib/gmail';
@@ -68,15 +70,15 @@ function ComposeField({
   );
 }
 
-// Prompt the local LLM to draft an email body from a short instruction.
-function buildDraftPrompt(topic: string, to: string, subject: string): string {
+// Prompt the local LLM to draft an email body from a short instruction. The
+// `instruction` is user-editable in Settings; the topic/recipient/subject are
+// always appended here so a custom instruction can't break that context.
+function buildDraftPrompt(instruction: string, topic: string, to: string, subject: string): string {
   const ctx: string[] = [];
   if (to.trim()) ctx.push(`Recipient: ${to.trim()}`);
   if (subject.trim()) ctx.push(`Subject: ${subject.trim()}`);
   return (
-    'You are helping write an email. Write a clear, friendly, professional email ' +
-    'body based on the instruction below. Reply with ONLY the email body text — ' +
-    'no subject line, no preamble, no quotes, no markdown.' +
+    instruction +
     (ctx.length ? `\n\n${ctx.join('\n')}` : '') +
     `\n\nInstruction: ${topic.trim()}\n\nEmail body:`
   );
@@ -94,6 +96,7 @@ function AiAssist({
 }) {
   const theme = useTheme();
   const { status, progress, complete } = useQvac();
+  const { prompts } = usePromptSettings();
   const [topic, setTopic] = useState('');
   const [drafting, setDrafting] = useState(false);
 
@@ -117,7 +120,7 @@ function AiAssist({
     if (!canDraft) return;
     setDrafting(true);
     try {
-      const body = await complete(buildDraftPrompt(topic, to, subject));
+      const body = await complete(buildDraftPrompt(prompts.draft, topic, to, subject), undefined, 'draft');
       if (body) onDraft(body);
     } finally {
       setDrafting(false);
@@ -158,15 +161,94 @@ function AiAssist({
   );
 }
 
+const TONES = ['Formal', 'Casual', 'Shorter'];
+
+function buildTonePrompt(instruction: string, tone: string, body: string): string {
+  return `${instruction}\n\nTone: ${tone}\n\nEmail body:\n${body}\n\nRewritten:`;
+}
+
+// Rewrites the current draft body in a chosen tone, on-device.
+function ToneChips({ body, onRewrite }: { body: string; onRewrite: (b: string) => void }) {
+  const { status, complete } = useQvac();
+  const { prompts } = usePromptSettings();
+  const [busy, setBusy] = useState<string | null>(null);
+
+  if (status !== 'ready' || !body.trim()) return null;
+
+  const apply = async (tone: string) => {
+    if (busy) return;
+    setBusy(tone);
+    try {
+      const out = await complete(buildTonePrompt(prompts.tone, tone, body), undefined, 'tone');
+      if (out) onRewrite(out);
+    } finally {
+      setBusy(null);
+    }
+  };
+
+  return (
+    <View style={styles.toneRow}>
+      <ThemedText type="small" themeColor="textSecondary">
+        ✨ Adjust tone:
+      </ThemedText>
+      {TONES.map((tone) => (
+        <Pressable
+          key={tone}
+          onPress={() => apply(tone)}
+          disabled={!!busy}
+          accessibilityRole="button"
+          accessibilityLabel={`Rewrite ${tone.toLowerCase()}`}
+          style={[styles.toneChip, !!busy && styles.disabled]}
+        >
+          {busy === tone ? (
+            <ActivityIndicator size="small" />
+          ) : (
+            <ThemedText type="smallBold" themeColor="textSecondary">
+              {tone}
+            </ThemedText>
+          )}
+        </Pressable>
+      ))}
+    </View>
+  );
+}
+
 export default function SendScreen() {
   const insets = useSafeAreaInsets();
   const { isAuthenticated, getAccessToken } = useGoogleAuth();
+  // Prefill params arrive from "Reply" in the email reader.
+  const params = useLocalSearchParams<{
+    to?: string;
+    subject?: string;
+    body?: string;
+    prefill?: string;
+  }>();
 
-  const [to, setTo] = useState('');
-  const [subject, setSubject] = useState('');
-  const [body, setBody] = useState('');
+  const [to, setTo] = useState(params.to ?? '');
+  const [subject, setSubject] = useState(params.subject ?? '');
+  const [body, setBody] = useState(params.body ?? '');
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null);
+
+  // Apply a reply prefill when one arrives. Keyed by the `prefill` token so a
+  // new reply repopulates the form, but ordinary re-renders never clobber edits.
+  const appliedPrefill = useRef<string | null>(null);
+  useEffect(() => {
+    const token = params.prefill;
+    if (!token || appliedPrefill.current === token) return;
+    let cancelled = false;
+    (async () => {
+      if (cancelled) return;
+      appliedPrefill.current = token;
+      if (typeof params.to === 'string') setTo(params.to);
+      if (typeof params.subject === 'string') setSubject(params.subject);
+      if (typeof params.body === 'string') setBody(params.body);
+      setStatus(null);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [params.prefill, params.to, params.subject, params.body]);
 
   const topInset = Platform.OS === 'web' ? Spacing.six : insets.top + Spacing.three;
   const bottomInset = insets.bottom + BottomTabInset + Spacing.three;
@@ -247,6 +329,8 @@ export default function SendScreen() {
                 autoCapitalize="sentences"
                 autoComplete="off"
               />
+
+              <ToneChips body={body} onRewrite={setBody} />
 
               {to.length > 0 && !recipientValid ? (
                 <ThemedText type="small" style={[styles.note, { color: Colors.accentRed }]}>
@@ -366,6 +450,24 @@ const styles = StyleSheet.create({
   aiButtonText: {
     color: Colors.onPrimary,
     fontWeight: '800',
+  },
+  toneRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: Spacing.two,
+    marginTop: -Spacing.one,
+  },
+  toneChip: {
+    minHeight: 32,
+    minWidth: 64,
+    paddingHorizontal: Spacing.three,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: Colors.backgroundElement,
+    borderRadius: Spacing.four,
+    borderWidth: 1,
+    borderColor: Colors.border,
   },
   note: {
     paddingHorizontal: Spacing.half,

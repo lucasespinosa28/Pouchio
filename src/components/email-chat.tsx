@@ -1,5 +1,6 @@
 /**
- * Floating "Ask AI" button + chat sheet for the email reader (TODO #13).
+ * "Ask AI" chat sheet for the email reader (TODO #13). Opened from the reader's
+ * AI menu (`ReaderAI`) — visibility is controlled by the parent.
  *
  * Lets the user ask questions about the open email; answers are produced by the
  * local RAG pipeline in `useEmailChat` (retrieval over the email + completion).
@@ -46,13 +47,16 @@ function Bubble({ message }: { message: ChatMessage }) {
 export function EmailChat({
   emailId,
   bodyText,
+  visible,
+  onClose,
 }: {
   emailId: string | undefined;
   bodyText: string | undefined;
+  visible: boolean;
+  onClose: () => void;
 }) {
   const theme = useTheme();
   const insets = useSafeAreaInsets();
-  const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
   const { messages, asking, ask, embeddingStatus, embeddingProgress } = useEmailChat(
     emailId,
@@ -76,23 +80,13 @@ export function EmailChat({
   };
 
   return (
-    <>
-      <Pressable
-        onPress={() => setOpen(true)}
-        accessibilityRole="button"
-        accessibilityLabel="Ask AI about this email"
-        style={[styles.fab, { bottom: insets.bottom + Spacing.three }]}
-      >
-        <ThemedText style={styles.fabText}>✨ Ask AI</ThemedText>
-      </Pressable>
-
-      <Modal visible={open} animationType="slide" onRequestClose={() => setOpen(false)}>
+    <Modal visible={visible} animationType="slide" onRequestClose={onClose}>
         <ThemedView style={styles.sheet}>
           <View style={[styles.sheetHeader, { paddingTop: insets.top + Spacing.two }]}>
             <ThemedText type="subtitle" style={styles.sheetTitle}>
               Ask about this email
             </ThemedText>
-            <Pressable onPress={() => setOpen(false)} hitSlop={Spacing.two} accessibilityLabel="Close">
+            <Pressable onPress={onClose} hitSlop={Spacing.two} accessibilityLabel="Close">
               <ThemedText type="smallBold" themeColor="textSecondary">
                 Close
               </ThemedText>
@@ -152,33 +146,12 @@ export function EmailChat({
             </View>
           </KeyboardAvoidingView>
         </ThemedView>
-      </Modal>
-    </>
+    </Modal>
   );
 }
 
 const styles = StyleSheet.create({
   flex: { flex: 1 },
-  fab: {
-    position: 'absolute',
-    right: Spacing.three,
-    backgroundColor: Colors.primary,
-    paddingHorizontal: Spacing.four,
-    paddingVertical: Spacing.three,
-    borderRadius: Spacing.five,
-    // Duolingo 3D button: thick bottom edge in the shadow green.
-    borderBottomWidth: 4,
-    borderBottomColor: Colors.primaryShadow,
-    shadowColor: '#000',
-    shadowOpacity: 0.15,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 4,
-  },
-  fabText: {
-    color: '#ffffff',
-    fontWeight: '700',
-  },
   sheet: {
     flex: 1,
   },

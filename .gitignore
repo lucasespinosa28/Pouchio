@@ -41,3 +41,7 @@ example
 # generated native folders
 /ios
 /android
+
+# captured run logs (keep the dir; force-add specific evidence logs with `git add -f`)
+logs/*
+!logs/.gitkeep

@@ -1,56 +1,176 @@
-# Welcome to your Expo app 👋
+# Pouchio 📩
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A Gmail client with **on-device AI**. Pouchio reads your inbox and helps you
+summarize, search, triage, draft, reply, extract tasks, and translate — all with
+a local LLM running on your phone. Your email content never leaves the device.
 
-## Get started
+> Built with Expo (SDK 56) + Expo Router, React Native 0.85 / React 19, and the
+> [QVAC SDK](https://www.npmjs.com/package/@qvac/sdk) for local inference.
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- **Inbox** — Gmail messages as cards with sender, thumbnail, and snippet;
+  infinite scroll, pull-to-refresh, and a read/unread toggle.
+- **On-device summaries** — each card gets a short AI summary generated locally.
+- **Auto-triage labels** — every email is classified on-device (Priority /
+  Newsletter / Receipt / Social) and shown as a color-coded chip.
+- **Search, two ways**
+  - **Keyword** — whole-mailbox server-side Gmail search.
+  - **✨ Smart** — semantic search that ranks the loaded inbox by *meaning*,
+    using local text embeddings.
+- **Reader with an ✨ AI menu** — open an email and tap **AI** for:
+  - 💬 **Ask** — chat about the email (local RAG over its content).
+  - ↩️ **Suggest replies** — drafts a few replies; pick one to open Send prefilled.
+  - ✅ **Action items** — extract tasks, deadlines, and dates.
+  - 🌐 **Translate** — translate the email into a chosen language.
+- **Send** — compose and send mail, with **✨ Write with AI** drafting and
+  **tone chips** (Formal / Casual / Shorter) to rewrite your draft.
+- **Unread digest** — one-tap "✨ Summarize unread" digest of your unread mail.
+- **Settings** — sign-in, local-model status, and **editable AI prompts** for
+  every feature (each with reset-to-default).
 
-2. Start the app
+Everything AI runs **locally** via QVAC — `LLAMA_3_2_1B_INST_Q4_0` for text
+generation and `GTE_LARGE_FP16` for embeddings. Models download on first use.
 
-   ```bash
-   npx expo start
-   ```
+## Requirements
 
-In the output, you'll find options to open the app in a
+- [Bun](https://bun.sh) (package manager — see `bun.lock`)
+- Xcode (iOS) and/or Android Studio for native builds
+- **A physical device** to use the AI features — QVAC does not run on simulators,
+  emulators, or web (those fall back gracefully with the AI disabled).
+- A Google Cloud OAuth client for Gmail access (see [Configuration](#configuration)).
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Getting started
 
 ```bash
-npm run reset-project
+# 1. Install dependencies
+bun install
+
+# 2. Configure OAuth (see below) — create .env.local
+
+# 3. Build & run on a connected device (required for native modules + AI)
+bunx expo run:ios --device
+# or
+bunx expo run:android
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+> Pouchio uses native modules (Google Sign-In, WebView, QVAC), so **Expo Go is
+> not supported** — you need a development/native build. After the first native
+> build you can iterate with `bun run start` (Metro).
 
-### Other setup steps
+### Scripts
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+| Command            | What it does                              |
+| ------------------ | ----------------------------------------- |
+| `bun run start`    | Start the Expo dev server (Metro)         |
+| `bun run ios`      | Build & run on iOS (`expo run:ios`)       |
+| `bun run android`  | Build & run on Android                    |
+| `bun run web`      | Run in the browser (AI disabled)          |
+| `bun run lint`     | Lint with `expo lint`                     |
+| `bunx tsc --noEmit`| Type-check (no test runner is configured) |
 
-## Learn more
+## Configuration
 
-To learn more about developing your project with Expo, look at the following resources:
+Pouchio signs in with native Google Sign-In and calls the Gmail REST API with the
+`gmail.readonly` and `gmail.send` scopes. Create a `.env.local` file in the
+project root with your OAuth client IDs:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+# .env.local  (git-ignored — never commit this)
+EXPO_PUBLIC_IOS_CLIENT_ID=<your iOS OAuth client id>
+EXPO_PUBLIC_WEB_CLIENT_ID=<your Web OAuth client id>
+```
 
-## Join the community
+Set up the OAuth clients in the [Google Cloud Console](https://console.cloud.google.com/),
+enable the **Gmail API**, and add the `gmail.send` scope to your consent screen.
+The iOS reversed-client-id URL scheme is configured via the `google-signin`
+plugin in `app.json` (these client IDs are public by design — there is no client
+secret for native OAuth clients).
 
-Join our community of developers creating universal apps.
+## Architecture
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+File-based routing with **Expo Router**; the `@/*` alias maps to `src/`.
+
+```
+src/
+├── app/                      # Routes (file-based)
+│   ├── _layout.tsx           # Root stack + providers (auth, prompts, QVAC)
+│   ├── (tabs)/
+│   │   ├── index.tsx         # Inbox
+│   │   ├── send.tsx          # Compose / send + AI draft + tone
+│   │   └── settings.tsx      # Account, model status, editable prompts
+│   └── message/[id].tsx      # Email reader + ✨ AI menu
+├── components/               # UI (cards, sheets, AI panels, themed primitives)
+├── hooks/                    # Data + AI hooks (Gmail, QVAC, summaries, triage…)
+├── constants/theme.ts        # Light-only Duolingo-flavored design tokens
+└── lib/gmail.ts              # Gmail REST API + RFC 2822 message building
+```
+
+Key pieces:
+
+- **`hooks/use-qvac.tsx`** — loads the local models and serializes every engine
+  call (completion + embeddings) through one queue, since the native engine runs
+  one job at a time.
+- **`hooks/use-prompt-settings.tsx`** — user-editable instruction prompts,
+  persisted as JSON; the dynamic email context is always appended in code so a
+  custom prompt can't break injection.
+- **`hooks/use-google-auth.tsx` / `lib/gmail.ts`** — auth and the Gmail data layer.
+
+Notable config (`app.json`): New Architecture is on, and `experiments`
+enables the **React Compiler** (avoid manual `useMemo`/`useCallback`) and
+**typed routes**.
+
+## Privacy
+
+All AI inference — summaries, triage, search embeddings, drafting, replies,
+action items, translation, and the unread digest — runs **on-device**. Email
+content is sent to Google's Gmail API (to read and send your mail) but is never
+sent to any third-party AI service.
+
+## Reproducibility & test hardware
+
+All AI in Pouchio runs **on-device**. The build below was developed and demoed on
+a single retail phone — no cloud inference, no compute cluster.
+
+**Test device (one line per spec):**
+
+- **CPU:** Hexa-core, with 2 performance cores at 4.26 GHz and 4 efficiency cores.
+- **GPU:** Apple GPU with 5 cores.
+- **RAM:** 12 GB.
+- **Storage:** 256 GB.
+
+**Models (downloaded on first use, then cached on-device):**
+
+- `LLAMA_3_2_1B_INST_Q4_0` — text generation (summaries, triage, RAG chat,
+  replies, action items, translation, digest, tone).
+- `GTE_LARGE_FP16` — text embeddings (semantic "Smart" search + RAG retrieval).
+
+**Reproduce the demo:**
+
+1. Install [Bun](https://bun.sh) and the platform toolchain (Xcode for iOS).
+2. `bun install`
+3. Create `.env.local` with your Google OAuth client IDs (see
+   [Configuration](#configuration)).
+4. Build to a **connected physical device** (Expo Go is not supported):
+   ```bash
+   bunx expo run:ios --device     # or: bunx expo run:android
+   ```
+5. Sign in with Google. On first launch the QVAC models download once — wait for
+   the **Local AI** status in **Settings** to show *ready*.
+6. Exercise each feature: inbox summaries + triage chips, keyword vs. ✨ Smart
+   search, the reader's ✨ AI menu (Ask / Reply / Action items / Translate), Send
+   with ✨ Write-with-AI + tone chips, and the inbox "✨ Summarize unread" digest.
+
+> The only network calls are Gmail (read/send) and Google Sign-In — all AI
+> inference happens locally and continues to work in airplane mode once the
+> models are cached.
+
+## Further reading
+
+The `docs/` folder contains the QVAC / on-device AI integration guides used while
+building this app (`expo.md`, `rag.md`, `text-generation.md`,
+`text-embeddings.md`, and more).
+
+## License
+
+Licensed under the [Apache License 2.0](./LICENSE).
