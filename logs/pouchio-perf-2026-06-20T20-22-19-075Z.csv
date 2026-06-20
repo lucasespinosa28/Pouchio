@@ -1,0 +1,2308 @@
+ts,kind,label,model,event,durationMs,promptChars,promptTokensApprox,outputChars,tokens,ttftMs,totalMs,tokensPerSec,inputChars,dims,prompt,output
+2026-06-20T20:19:29.225Z,model,,Llama 3.2 1B,load,1925,,,,,,,,,,,
+2026-06-20T20:19:32.447Z,completion,summary,Llama 3.2 1B,,,3694,924,462,125,1322,3148,67.9,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Confira os modelos do nosso best-seller&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;
+Confira os modelos do nosso best-seller
+‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+Confira os modelos do nosso best-seller
+Ver online Descadastre-se
+Reserva Infantil
+Calçados
+Outlet
+Até 5X SEM JUROS no cartão
+TROCA por nossa conta
+FRETE GRÁTIS para clientes Prime
+Ganhe 10% OFF utilizando código do seu vendedor
+Se quiser tirar alguma dúvida ou bater um papo, entre em contato conosco pelos canais abaixo:
+Whatsapp
+Horários de atendimento:
+Seg a sex: 09h às 18h
+Sáb: 08h às 16h
+Atendimento
+Confira nossa política de privacidade
+SIGAM-ME OS","Modelos do best-seller confira online
+
+Informações do modelo do best-seller
+- Modelo: [Modelo]
+- Nome: [Nome do modelo]
+- Descrição: [Descrição do modelo]
+- Plataforma: [Plataforma do modelo]
+- Verificação: [Verificação do modelo]
+
+Ações necessárias
+- Confira os modelos do nosso best-seller online
+- Verifique as especificações do modelo para cada produto
+- Verifique a política de privacidade da empresa
+- Entre em contato com o vendedor se tiver alguma dúvida"
+2026-06-20T20:19:32.957Z,completion,triage,Llama 3.2 1B,,,1769,442,10,1,507,508,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Reserva Go <noreply@mkt.usereserva.com>
+Subject: Yankee: um sneaker, várias versões pra escolher 👟
+
+Confira os modelos do nosso best-seller&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#6",Newsletter
+2026-06-20T20:19:34.574Z,completion,summary,Llama 3.2 1B,,,3694,924,298,64,608,1615,62.6,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Bowen Yang’s mapo tofu
+96
+
+
+Well, technically it’s Bowen Yang’s mom’s mapo tofu. Either way, it’s wonderful.
+View in browser | nytimes.com
+June 20, 2026
+Good morning! Today we have for you:
+Bowen Yang’s mapo tofu
+Buffalo sauce for all your dipping and glazing needs
+And, a very elegant (and very easy) ice cream dessert with dates
+Bowen Yang’s mapo tofu, adapted by The New York Times.  Linda Xiao for The New York Times. Food Stylist: Barrett Washburne.
+I do think so, honey
+By Mia Leimkuhler
+Very close readers of this newsletter will remember that I collect various recipes for my favorite dishes — hainan chicken rice is one; chicken adobo is another. I do this because 1. it’s fun to note regional, family or personal differences between versions, and 2. they’re delicious dishes that I crave and certainly don’t mind making and eating over and over.
+Another such recipe is mapo tofu , which, like the adobo, is very pantry-friendly; once you’re set up with tingly Sichuan peppercorns and doubanjiang (fermented chile bean sauce or paste), you can make all sorts of mapo tofus (mapos tofu?). Vegan mapo tofu . Eggy mapo tofu scramble . Mapo tofu nachos ! And now, Bowen Yang’s mapo tofu .
+Bowen, a comedian and podcaster, shared his mother’s version with his “Las Culturistas” co-host Matt Rogers in the New York Times Cooking studio kitchen. Click here or on the image below for 16 minutes of pure delight:
+The New York Times
+Bowen’s mom’s mapo tofu opts for pork instead of beef and uses firm rather than silken tofu to add even more body to the slightly drier sauce. It’s not dry -dry, though — you’ll still want to serve it with rice to catch all that savory, spicy, tingly goodness. I don’t know how Emmy voting works, but I’d like to think this excellent recipe (and video) can only improve Bowen’s chances.
+Featured Recipe
+Bowen Yang’s Mapo Tofu
+View Recipe →
+A trio of terrific tofus
+Armando Rafael for The New York Times
+Crispy Tofu Tacos
+By Alexa Weibel
+3,272
+1 1/4 hours
+Makes 8 to 10 tacos
+Rachel Vanni for The New York Times. Food Stylist: Spencer Richards.
+Za’atar Roasted Tofu With Chickpeas, Tomatoes and Lemony Tahini
+By Yewande Komolafe
+5,041
+40 minutes
+Makes 4 servings
+Armando Rafael for The New York Times
+Sheet-Pan Tofu With Corn and Chiles
+By Melissa Clark
+1,799
+45 to 50 minutes
+Makes 2 to 4 servings
+And now, a selection of recipes inspired by Bowen and Matt
+Peruvian roasted chicken with spicy cilantro sauce : Bowen kicks off the video by introducing NYT Cooking as “ the house that Melissa Clark built ,” and he’s not wrong. Here’s an absolute classic dish of hers, a gorgeous bronzed bird with five stars and over 7,000 ratings.
+Buffalo sauce : “If I could guilt-free eat one thing for the rest of my life,” Matt says , “it would be Buffalo chicken tenders drenched in Buffalo sauce. I will eat anything if you put Buffalo on it.” I’ll leave Eric Kim’s Buffalo sauce recipe right here.
+Steak au poivre : At the 2026 “Las Culturistas” Culture Awards , steak au poivre was a nominee for best dinner. (Other nominees included “One with a proposal two tables over … so wonderful — reminds me of how we used to be” and “Whatever it is, you cooked it and you beat Bobby Flay.”) I think steak au poivre, specifically this perfect version for two from Alexa Weibel, should have won, but I respect the judges.
+For a limited time, you can enjoy free access to the recipes in this newsletter in our app. Download it on your iOS or Android device and create a free account to ","Bowen Yang's mother shares a recipe for mapo tofu, a dish she adapted by adding tingly Sichuan peppercorns and doubanjiang to a pork-based version. The recipe includes details on ingredients, cooking time, and serving suggestions. The dish is adapted from the New York Times Cooking studio kitchen."
+2026-06-20T20:19:34.988Z,completion,triage,Llama 3.2 1B,,,1737,434,10,1,306,410,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: NYT Cooking <nytdirect@nytimes.com>
+Subject: Bowen Yang’s mapo tofu
+
+Bowen Yang’s mapo tofu
+96
+
+
+Well, technically it’s Bowen Yang’s mom’s mapo tofu. Either way, it’s wonderful.
+View in browser | nytimes.com
+June 20, 2026
+Good morning! Today we have for you:
+Bowen Yang’s mapo tofu
+Buffalo sauce for all your dipping and glazing needs
+And, a very elegant (and very easy) ice cream dessert with dates
+Bowen Yang’s mapo tofu, adapted by The New York Times.  Linda Xiao for The New York Times. Food Stylist: Barrett Washburne.
+I do think so, honey
+By Mia Leimkuhler
+Very close readers of this newsletter will remember that I collect various recipes for my favorite dishes — hainan chicken rice is one; chicken adobo is another. I do this because 1. it’s fun to note regional, family or personal differences between versions, and 2. they’re delicious dishes that I crave and certainly don’t mind making and eating over and over.
+Another such recipe is mapo tofu , which, like the adobo, is very pantry-friendly; once you’re set up with tingly Sichuan peppercorns and doubanjiang (fermented chile bean sauce or paste), you can make all sorts of mapo tofus (mapos tofu?). Vegan mapo tofu . Eggy mapo tofu scramble . Mapo tofu nachos ! And now, Bowen Yang’s mapo tofu .
+Bowe",Newsletter
+2026-06-20T20:19:37.018Z,completion,summary,Llama 3.2 1B,,,1855,464,423,112,411,2026,68.7,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Só a eleição não vai resolver o nosso problema 
+
+Lucas espinosa, por que o grande problema do Brasil é a elite? 
+
+Neste episódio do Liberta Talks gravado diretamente na sede da L&S Investment Advisors, em Miami, recebemos 
+
+**Leandro Ruschel**, sócio-fundador da Liberta Investimentos. 
+
+Com quase 30 anos de mercado financeiro, Ruschel começou a investir aos 16 anos com a poupança que o avô deixou, aprendeu análise técnica em sites americanos numa época em que a internet brasileira mal existia, e construiu uma visão de mundo que une 
+
+**mercado, política e geopolítica** de forma que poucos analistas ousam fazer.
+
+No papo, ele explica por que a análise técnica ainda é sua principal ferramenta, como leu o cenário da reeleição do FHC e dobrou o patrimônio numa única operação de dólar, e o que a quebra do Lehman Brothers parecia de dentro de um escritório em Porto Alegre com o pregão viva voz ligado.
+
+Além do mercado, ele abre o jogo sobre a decisão de deixar o Brasil: a entrevista para a Infomoney que antecipou a crise do governo Dilma, o episódio de violência que acelerou a decisão, a ligação inesperada do CEO da XP que mudou o destino, e o que ele aprendeu vivendo nos Estados Unidos sobre o que uma sociedade realmente precisa para prosperar.
+
+O episódio está disponível no YouTube e em todas as plataformas de streaming.
+
+ASSISTIR AO EPISÓDIO COMPLETO 
+
+Esperamos você!
+
+Equipe Liberta
+
+
+
+www.libertainvestimentos.com.br 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Enviado para: lucasespinosa159@gmail.com
+
+Cancelar inscrição 
+
+L&S, Avenida João Wallig, 1800 | Escritórios Boutique Sala 4013, Porto Alegre - RS, 91349-900, Brasil","Lucas espinosa agradece a oportunidade de falar sobre a análise técnica como ferramenta chave para entender a política do Brasil. Ele destaca a importância do mercado e a decisão de investir em estratégias que podem trazer lucro. O episódio foi gravado em uma entrevista para a Infomoney e inclui a ligação inesperada do CEO da XP, o que mostra que a análise técnica pode ser uma ferramenta eficaz para entender a economia."
+2026-06-20T20:19:37.439Z,completion,triage,Llama 3.2 1B,,,1761,440,10,1,305,418,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Leandro Ruschel <contato@liberta.com.vc>
+Subject: O que Olavo diria sobre o Brasil de hoje?
+
+Só a eleição não vai resolver o nosso problema 
+
+Lucas espinosa, por que o grande problema do Brasil é a elite? 
+
+Neste episódio do Liberta Talks gravado diretamente na sede da L&S Investment Advisors, em Miami, recebemos 
+
+**Leandro Ruschel**, sócio-fundador da Liberta Investimentos. 
+
+Com quase 30 anos de mercado financeiro, Ruschel começou a investir aos 16 anos com a poupança que o avô deixou, aprendeu análise técnica em sites americanos numa época em que a internet brasileira mal existia, e construiu uma visão de mundo que une 
+
+**mercado, política e geopolítica** de forma que poucos analistas ousam fazer.
+
+No papo, ele explica por que a análise técnica ainda é sua principal ferramenta, como leu o cenário da reeleição do FHC e dobrou o patrimônio numa única operação de dólar, e o que a quebra do Lehman Brothers parecia de dentro de um escritório em Porto Alegre com o pregão viva voz ligado.
+
+Além do mercado, ele abre o jogo sobre a decisão de deixar o Brasil: a entrevista para a Infomoney que antecipou a crise do governo Dilma, o episódio de violência que acelerou a decisão, a ligação inesperada do CEO da XP que mudou o destino, e o que ele aprendeu vivendo nos E",Newsletter
+2026-06-20T20:19:39.863Z,completion,summary,Llama 3.2 1B,,,226,57,859,160,104,2422,68.6,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Plain text version not available","From: [Email Address]
+To: [Recipient's Email]
+Date: [Date]
+
+Key points:
+
+* The recipient's [business/organization] is planning a marketing campaign to promote a new product.
+* The campaign involves creating targeted ads on social media platforms.
+* The recipient needs to provide the necessary information, including product details and target audience demographics.
+
+Action needed:
+- Provide the necessary information for the marketing campaign
+- Review and approve the campaign concept before proceeding
+- Review the campaign budget and timeline with the marketing team
+
+Important details:
+
+* The campaign will run for 6 weeks, with regular check-ins and feedback sessions
+* The marketing team will handle the campaign's social media management and ad creation
+* The recipient's team will review the campaign's progress and provide input on future campaigns"
+2026-06-20T20:19:40.070Z,completion,triage,Llama 3.2 1B,,,587,147,10,1,204,205,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: ""GOG.COM"" <newsletter@email3.gog.com>
+Subject: 2LHKA4VFRKYHNULUMT expires in 24 HOURS
+
+Plain text version not available",Newsletter
+2026-06-20T20:19:41.889Z,completion,summary,Llama 3.2 1B,,,935,234,370,100,305,1818,65.4,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Weekly Progress
+96
+Veja as estatísticas.
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ 
+ 
+Sua ofensiva está se sentindo especial!
+CONTINUE A APRENDER
+CONTINUE A APRENDER
+ 
+Seu progresso semanal
+Sáb D Seg Ter Qua Qui Sex
+Você chegou em ‎1007‎ dias! Será que consegue uma ofensiva perfeita semana que vem?
+ 
+‎586‎ XP
+‎34‎% a mais que semana passada
+‎209‎ minutos
+‎53‎% a mais que semana passada
+‎26‎ lições
+‎24‎% a mais que semana passada
+ 
+Tem muita coisa para você aprender!
+FAÇA UMA LIÇÃO
+FAÇA UMA LIÇÃO
+ 
+ 
+5900 Penn Avenue, Pittsburgh PA 15206, USA
+Cancelar cadastro","A email contém uma mensagem de motivação para um usuário, onde é apresentado um progresso semanal de 1007 dias, com uma taxa de avanço de 34% em relação à semana anterior. A ofensiva é considerada ""excepcional"" e o usuário é incentivado a continuar aprendendo para alcançar um nível de progresso semanal. Além disso, a empresa oferece uma opção para cancelar o cadastro."
+2026-06-20T20:19:42.295Z,completion,triage,Llama 3.2 1B,,,1308,327,10,1,404,405,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Duolingo <hello@duolingo.com>
+Subject: 📈 Uau, ‎Lucas Espinosa‎… Olha quanto progresso em inglês!
+
+Weekly Progress
+96
+Veja as estatísticas.
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ 
+ 
+Sua ofensiva está se sentindo especial!
+CONTINUE A APRENDER
+CONTINUE A APRENDER
+ 
+Seu progresso semanal
+Sáb D Seg Ter Qua Qui Sex
+Você chegou em ‎1007‎ dias! Será que consegue uma ofensiva perfeita semana que vem?
+ 
+‎586‎ XP
+‎34‎% a mais que semana passada
+‎209‎ minutos
+‎53‎% a mais que semana passada
+‎26‎ lições
+‎24‎% a mais que semana passada
+ 
+Tem muita coisa para você aprender!
+FAÇA UMA LIÇÃO
+FAÇA UMA LIÇÃO
+ 
+ 
+5900 Penn Avenue, Pittsburgh PA 15206, USA
+Cancelar cadastro",Newsletter
+2026-06-20T20:19:45.425Z,completion,summary,Llama 3.2 1B,,,3694,924,325,73,1818,3129,54.9,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+=E6=96=B0=E4=BD=9C=E3=83=88=E3=83=AC=E3=83=BC=E3=83=87=E3=82=A3=E3=83=B3=E3=
+=82=B0=E3=82=AB=E3=83=BC=E3=83=89Akibahara Flowers=EF=BC=88BOX=EF=BC=89=E3=
+=81=8C
+=E3=81=B5=E3=82=8B=E3=81=95=E3=81=A8=E7=B4=8D=E7=A8=8E=E3=81=AB=E7=99=BB=E5=
+=A0=B4=E3=80=82
+
+
+
+=E3=82=A2=E3=83=BC=E3=83=86=E3=82=A3=E3=82=B9=E3=83=88Mr.=E3=81=AENFT=E3=83=
+=97=E3=83=AD=E3=82=B8=E3=82=A7=E3=82=AF=E3=83=88=E3=80=8CAkibahara Tokyou=
+=E3=80=8D=E3=81=A8=E6=9D=91=E4=B8=8A=E9=9A=86=E3=81=AE=E3=80=8CMurakami=E2=
+=80=A4Flowers=E3=80=8D=E3=81=AE=E3=82=B3=E3=83=A9=E3=83=9C=E3=83=AC=E3=83=
+=BC=E3=82=B7=E3=83=A7=E3=83=B3=E3=80=8CAkibahara Flowers=E3=80=8D=E3=80=82
+
+=E6=83=91=E6=98=9F=E3=83=8D=E3=82=B3=E3=83=8B=E3=83=A3=E3=83=B3=E3=81=AE=E9=
+=83=BD=E5=B8=82=E3=80=8C=E3=82=A2=E3=82=AD=E3=83=90=E3=83=8F=E3=83=A9=E3=80=
+=8D=E3=81=A7=E6=9A=AE=E3=82=89=E3=81=991=E4=B8=87=E7=A8=AE=E9=A1=9E=E3=81=
+=AE=E5=80=8B=E6=80=A7=E7=9A=84=E3=81=AA=E3=82=AD=E3=83=A3=E3=83=A9=E3=82=AF=
+=E3=82=BF=E3=83=BC=E3=81=9F=E3=81=A1=E3=81=A8=E3=80=81=E6=9D=91=E4=B8=8A=E9=
+=9A=86=E3=81=AE=E8=B1=A1=E5=BE=B4=E7=9A=84=E3=81=AA=E3=81=8A=E8=8A=B1=E3=81=
+=8C=E8=9E=8D=E5=90=88=E3=81=97=E3=81=9F=E3=80=81=E6=96=B0=E3=81=9F=E3=81=AA=
+=E3=82=A2=E3=83=BC=E3=83=88=E4=BD=93=E9=A8=93=E3=81=A7=E3=81=99=E3=80=82
+=E2=80=8B
+
+
+
+
+
+=E3=81=9D=E3=82=93=E3=81=AA=E3=80=8CAkibahara Flowers=E3=80=8D=E3=81=8C=E3=
+=83=88=E3=83=AC=E3=82=AB=E3=81=AB=E3=81=AA=E3=82=8A=E3=81=BE=E3=81=97=E3=81=
+=9F=E3=80=82
+
+=E5=85=A8108=E7=A8=AE=E9=A1=9E=EF=BC=8B=E3=82=B7=E3=83=BC=E3=82=AF=E3=83=AC=
+=E3=83=83=E3=83=88=E3=81=AE=E3=82=A2=E3=83=BC=E3=83=88=E3=83=AF=E3=83=BC=E3=
+=82=AF=E3=81=8B=E3=82=89=E3=80=811BOX=E3=81=AB5=E3=83=91=E3=83=83=E3=82=AF=
+=EF=BC=881=E3=83=91=E3=83=83=E3=82=AF=E3=83=A9=E3=83=B3=E3=83=80=E3=83=A05=
+=E6=9E=9A=E5=85=A5=E3=82=8A=EF=BC=89=E3=81=8C=E5=B0=81=E5=85=A5=E3=80=81Mr.=
+=E3=81=AE=E4=B8=96=E7=95=8C=E8=A6=B3=E3=81=A8=E6=9D=91=E4=B8=8A=E9=9A=86=E3=
+=81=AE=E3=81=8A=E8=8A=B1=E3=81=8C=E8=83=8C=E6=99=AF=E5=89=8D=E9=9D=A2=E3=81=
+=AB=E3=83=87=E3=82=B6=E3=82=A4=E3=83=B3=E3=81=95=E3=82=8C=E3=81=9F=E3=81=8A=
+=E5=AE=9D=E5=BF=85=E9=A0=88=E3=81=AE=E3=82=A2=E3=83=BC=E3=83=88=E3=83=88=E3=
+=83=AC=E3=82=AB=E3=81=A8=E3=81=AA=E3=81=A3=E3=81=A6=E3=81=84=E3=81=BE=E3=81=
+=99=E3=80=82
+
+=E3=81=9C=E3=81=B2=E3=81=94=E8=87=AA=E8=BA=AB=E3=81=AE=E6=89=8B=E3=81=A7=E3=
+=80=81=E3=81=8A=E6=B0=97=E3=81=AB=E5=85=A5=E3=82=8A=E3=81=AE1=E6=9E=9A=E3=
+=82=92=E5=BC=95=E3=81=8D=E5=BD=93=E3=81=A6=E3=81=A6=E3=81=8F=E3=81=A0=E3=81=
+=95=E3=81=84=E3=80=82
+
+[=E3=81=B5=E3=82=8B=E3=81=95=E3=81=A8=E7=B4=8D=E7=A8=8E=E3=82=B5=E3=82=A4=
+=E3=83=88=E3=81=A7=E3=81=BF=E3=82=8B]( 
+
+
+
+
+
+=E3=80=90=E5=95=86=E5=93=81=E8=A9=B3=E7=B4=B0=E3=80=91
+=E3=83=BB1BOX 5=E3=83=91=E3=83=83=E3=82=AF=E5=85=A5=E3=82=8A
+=E2=80=BB=E5=85=A8108=E7=A8=AE=E9=A1=9E=EF=BC=8B=E3=82=B7=E3=83=BC=E3=82=AF=
+=E3=83=AC=E3=83=83=E3=83=88 / 1BOX=E3=81=AB5=E3=83=91=E3=83=83=E3=82=AF=EF=
+=BC=881=E3=83=91=E3=83=83=E3=82=AF=E3=83=A9=E3=83=B3=E3=83=80=E3=83=A05=E6=
+=9E=9A=E5=85=A5=E3=82=8A=EF=BC=89
+
+=E2=80=8B
+
+[=E3=81=B5=E3=82=8B=E3=81=95=E3=81=A8=E7=B4=8D=E7=A8=8E=E3=82=B5=E3=82=A4=
+=E3=83=88=E3=81=A7=E3=81=BF=E3=82=8B]( 
+
+=E6=9C=AC=E6=97=A5=E3=82=88=E3=82=8A=E9=A0=86=E6=AC=A1=E3=80=81=E4=BB=A5=E4=
+=B8=8B=E3=81=AE=E4=B8=BB=E8=A6=81=E3=82=B5=E3=82=A4=E3=83=88=E3=81=8B=E3=82=
+=89=E3=82=82=E3=81=8A=E7=94=B3=E3=81=97=E8=BE=BC=E3=81=BF=E3=81=84=E3=81=9F=
+=E3=81=A0=E3=81=91=E3=81=BE=E3=81=99=E3=80=82
+=E2=91=A0=E3=81=B5=E3=82=8B=E3=81=95=E3=81=A8=E3=83=81=E3=83=A7","The email appears to be a formal invitation for a meeting between Mr. Akibahara and Mr. Tokyou, and the Murakami Flowers company. It includes details such as the name and address of the company, and the email's purpose and sender. The email also includes a list of boxes labeled with the company's name and the sender's name."
+2026-06-20T20:19:46.260Z,completion,triage,Llama 3.2 1B,,,1811,453,10,1,709,833,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: ""カイカイキキふるさと納税"" <tz-info@kaikaikiki.com>
+Subject: ふるさと納税各サイトにて「Murakami․Flowers Collectible Trading Card - Akibahara Flowers（BOX)」の受付を開始いたします。
+
+=E6=96=B0=E4=BD=9C=E3=83=88=E3=83=AC=E3=83=BC=E3=83=87=E3=82=A3=E3=83=B3=E3=
+=82=B0=E3=82=AB=E3=83=BC=E3=83=89Akibahara Flowers=EF=BC=88BOX=EF=BC=89=E3=
+=81=8C
+=E3=81=B5=E3=82=8B=E3=81=95=E3=81=A8=E7=B4=8D=E7=A8=8E=E3=81=AB=E7=99=BB=E5=
+=A0=B4=E3=80=82
+
+
+
+=E3=82=A2=E3=83=BC=E3=83=86=E3=82=A3=E3=82=B9=E3=83=88Mr.=E3=81=AENFT=E3=83=
+=97=E3=83=AD=E3=82=B8=E3=82=A7=E3=82=AF=E3=83=88=E3=80=8CAkibahara Tokyou=
+=E3=80=8D=E3=81=A8=E6=9D=91=E4=B8=8A=E9=9A=86=E3=81=AE=E3=80=8CMurakami=E2=
+=80=A4Flowers=E3=80=8D=E3=81=AE=E3=82=B3=E3=83=A9=E3=83=9C=E3=83=AC=E3=83=
+=BC=E3=82=B7=E3=83=A7=E3=83=B3=E3=80=8CAkibahara Flowers=E3=80=8D=E3=80=82
+
+=E6=83=91=E6=98=9F=E3=83=8D=E3=82=B3=E3=83=8B=E3=83=A3=E3=83=B3=E3=81=AE=E9=
+=83=BD=E5=B8=82=E3=80=8C=E3=82=A2=E3=82=AD=E3=83=90=E3=83=8F=E3=83=A9=E3=80=
+=8D=E3=81=A7=E6=9A=AE=E3=82=89=E3=81=991=E4=B8=87=E7=A8=AE=E9=A1=9E=E3=81=
+=AE=E5=80=8B=E6=80=A7=E7=9A=84=E3=81=AA=E3=82=AD=E3=83=A3=E3=83=A9=E3=82=AF=
+=E3=82=BF=E3=83=BC=E3=81=9F=E3=81=A1=E3=81=A8=E3=80=81=E6=9D=91=E4=B8=8A=E9=
+=9A=86=E3=81=AE=E8=B1=A1=E5=BE=B4=E7=9A=84=E3=81=AA=E3=81=8A=E8=8A=B1=E3=81=
+=8C=E8=9E=8D=E5=90=88=E3=81=97=E3=81=9F=E3=80=81=E6=96=B0=E3=81=9F=E3=81=AA=
+=E3=82=",Newsletter
+2026-06-20T20:19:49.389Z,completion,summary,Llama 3.2 1B,,,3694,924,890,168,607,3128,66.2,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+View this post on the web at 
+
+There is a version of this job where you execute.
+Someone brings you a problem, a brief, a deadline. You research, you wireframe, you test, you ship. You do it well. You do it consistently. And then one day you look up and realise the product decisions are happening somewhere you are not invited, the AI tools are doing the first three rounds of ideation before you open a file, and nobody is quite sure what your role is supposed to be anymore.
+Not because you did anything wrong. Because you were very, very good at the version of this job that no longer needs you to do it alone.
+This issue is about the shift underneath the shift. Not just AI, not just layoffs, not just “the industry is changing.” But the specific thing that is changing about what UX work actually is, and what it means for how you need to show up in it.
+In This Issue:
+The executional trap and how good practitioners fall into it
+What is actually being automated and what is not
+The new shape of UX influence
+Why “a seat at the table” is the wrong goal
+How to reposition yourself before someone repositions you
+Resource Corner
+BUT FIRST….
+Happy Juneteenth from UXU. Here’s a gift.
+Freedom means something different to everyone who carries it. But at its core it has always been about the right to take up space, to be seen, to bring your full self into the room and have it matter.
+That is exactly what UXCON26 is built around.
+This weekend, in honor of Juneteenth, we are opening early bird pricing on UXCON26 tickets from Friday June 19 through Sunday June 21 only. It is our way of saying thank you to a community that shows up, asks hard questions, and refuses to let the work be less than it should be.
+October 8 is the day the UX community comes together. Don Norman, the person who gave this field its name, headlines a lineup that includes practitioners from Netflix, The New York Times, Target, UserTesting, and Skylight. Three keynotes. Two panels. Workshops. One room full of people who still believe great design changes lives.
+The offer closes Sunday at midnight.
+The Executional Trap
+Here is how it happens, and it happens to the best people.
+You join a team. You are skilled, you are reliable, you learn the product fast. You become the person who delivers. Stakeholders learn they can hand you a problem and you will come back with something good. This feels like success, because it is success, at first.
+But over time, a pattern sets in:
+You are handed problems. You do not define them.
+You are brought in after the strategy conversations.
+You are handed the brief after the decisions.
+You are asked for solutions to problems you were never consulted about framing.
+Slowly, without anyone intending it, your role becomes execution. Smart, high-quality execution. But execution nonetheless.
+NN/g’s State of UX 2026 [ ] put it plainly: available roles are increasingly demanding breadth and judgment, not just artifacts. The practitioners who are thriving are not the ones who do UX best in the traditional sense. They are the ones who have moved upstream, into the problem definition, the strategic framing, the decisions about what gets built and why.
+The executional trap is not a character flaw. It is a structural gravity that pulls every practitioner toward it. Recognising it is the first move.
+What Is Actually Being Automated
+Let us be specific, because vague anxiety is not useful.
+What AI tools are genuinely absorbing right now:
+Ear","The issue of the executional trap in UX work involves good practitioners falling into the trap of assuming they need to do the initial problem definition and strategy framing for other teams, rather than focusing on the problem definition and decisions themselves. This results in the execution of tasks without being fully engaged in the decision-making process.
+
+Key points include:
+- The shift in UX work that is changing what it means to be a UX practitioner
+- The new shape of UX influence and influence on how UX practitioners are expected to show up in their work
+- The importance of recognizing and repositioning oneself before being repositioned
+
+Action needed:
+- Recognizing the executional trap and its consequences
+- Staying focused on the problem definition and decisions, rather than just executing tasks
+- Staying true to one's role and responsibilities as a UX practitioner."
+2026-06-20T20:19:49.897Z,completion,triage,Llama 3.2 1B,,,1818,455,8,1,507,507,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: User Experience University <researchbookmark@substack.com>
+Subject: [FREE GIFT]You Were Not Hired to Have Opinions. And That Is Exactly the Problem.
+
+View this post on the web at 
+
+There is a version of this job where you execute.
+Someone brings you a problem, a brief, a deadline. You research, you wireframe, you test, you ship. You do it well. You do it consistently. And then one day you look up and realise the product decisions are happening somewhere you are not invited, the AI tools are doing the first three rounds of ideation before you open a file, and nobody is quite sure what your role is supposed to be anymore.
+Not because you did anything wrong. Because you were very, very good at the version of this job that no longer needs you to do it alone.
+This issue is about the shift underneath the shift. Not just AI, not just layoffs, not just “the industry is changing.” But the specific thing that is changing about what UX work actually is, and what it means for how you need to show up in it.
+In This Issue:
+The executional trap and how good practitioners fall into it
+What is actually being automated and what is not
+The new shape of UX influence
+Why “a seat at the table” is the wrong goal
+How to reposition yourself before someone repositions you
+Resource Corner
+BUT FIRST….
+Happy Juneteenth from UXU. Here’s a gift.",Priority
+2026-06-20T20:19:51.817Z,completion,summary,Llama 3.2 1B,,,2622,656,451,87,609,1919,65.6,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Level Up & Get Paid: What's New in Discord 
+
+
+
+
+96 
+
+
+
+
+
+
+
+
+
+
+WHAT'S NEW
+IN THE DISCORD COMMUNITY
+
+🎮 Level Up & Get Paid
+
+Hi there,
+
+Another week, another wave of incredible creations. Here's what's been happening in the community — and why you might want to drop by Discord this week.
+
+
+⚡ Active Challenge
+
+⚽ World Cup Challenge 2: Recreate Iconic Celebrations
+Football legends don't just score — they celebrate. Ronaldo's ""Siuuu"", Mbappé's arms-crossed stance, Bebeto's baby cradle… This week's challenge: recreate an iconic celebration in 3D with Tripo. Go wild with it.
+
+Max Plan
+🎟️ 1 month free — 1 winner
+
+500 credits
+💰 per participant
+
+🗓 Deadline: June 24, 2026 · 11:00 AM UTC
+
+Join Now →
+
+
+
+Tripo Creator Program 💰 Make to Earn
+
+Post. Share. Earn Cash.
+Post your Tripo creations on social media with #TripoCreator , then drop them in #Creator-Showcase on Discord. Earn $5 per qualified submission — hit 100 ""tripo"" reactions and unlock a $100 bonus .
+
+📊 Last Week's Stats
+
+41
+submissions received
+
+17
+creators earned $5–$15
+1
+
+won 10,000 credits + 1mo Max
+
+Join Now →
+
+
+
+🆕 Just Launched
+
+📈 User Level System
+We just launched a leveling system on Discord. The more you chat, the more XP you earn. Each tier unlocks real rewards — credits, Pro plans, Max plans, and even exclusive merch.
+
+Join Now →
+
+
+
+✨ Featured Creations This Week
+
+Every model has a story.
+We selected some outstanding works from both the World Cup Challenge and Creator Showcase last week.
+
+
+@Elchummy brought Greek gods to life as stunning 3D prints. From Tripo model to resin — these classical figures look incredible in person.
+
+See it on Discord →
+
+
+@oOGimsch2016Oo made this adorable Cat Wizard — one of a whole fantasy series turning a real pet into magical characters. You can feel the love in every detail.
+
+See it on Discord →
+
+
+@AntoTortoza took home this week's Creator Program win! A rainbow reimagined as seven living biomes, each one its own little world. Creative and charming.
+
+See it on Discord →
+
+
+The community is growing fast. Jump in, make something, share it!
+
+
+See You on Discord → 
+
+Ready to start your creation today?
+
+All the inspiration is here — now it's your turn to make something.
+
+Back to Tripo →
+
+Happy creating! 🚀
+— The Tripo Team
+
+
+Tripo AI
+© 2023 - 2026 Tripo AI. All rights reserved.
+
+Unsubscribe
+
+
+
+
+
+
+support@tripo3d.ai
+
+tripo3d.ai","Here's a summary of the email in 2-4 sentences:
+
+The Discord community is celebrating the launch of a new feature called Level Up & Get Paid, which offers 1 month of free Max Plan credits to participants. The program also features a Creator Showcase with outstanding works from previous weeks. Additionally, the community can participate in the Tripo Creator Program, which rewards users for creating and sharing their Tripo creations on social media."
+2026-06-20T20:19:52.313Z,completion,triage,Llama 3.2 1B,,,1775,444,6,1,492,493,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Tripo AI <news@email.tripo3d.ai>
+Subject: 🎮 Create, Celebrate, Earn: ⚽️World Cup Week in Tripo Community
+
+Level Up & Get Paid: What's New in Discord 
+
+
+
+
+96 
+
+
+
+
+
+
+
+
+
+
+WHAT'S NEW
+IN THE DISCORD COMMUNITY
+
+🎮 Level Up & Get Paid
+
+Hi there,
+
+Another week, another wave of incredible creations. Here's what's been happening in the community — and why you might want to drop by Discord this week.
+
+
+⚡ Active Challenge
+
+⚽ World Cup Challenge 2: Recreate Iconic Celebrations
+Football legends don't just score — they celebrate. Ronaldo's ""Siuuu"", Mbappé's arms-crossed stance, Bebeto's baby cradle… This week's challenge: recreate an iconic celebration in 3D with Tripo. Go wild with it.
+
+Max Plan
+🎟️ 1 month free — 1 winner
+
+500 credits
+💰 per participant
+
+🗓 Deadline: June 24, 2026 · 11:00 AM UTC
+
+Join Now →
+
+
+
+Tripo Creator Program 💰 Make to Earn
+
+Post. Share. Earn Cash.
+Post your Tripo creations on social media with #TripoCreator , then drop them in #Creator-Showcase on Discord. Earn $5 per qualified submission — hit 100 ""tripo"" reactions and unlock a $100 bonus .
+
+📊 Last Week's Stats
+
+41
+submissions received
+
+17
+creators earned $5–$15
+1
+
+won 10,000 credits + 1mo Max
+
+Join Now →
+
+
+
+🆕 Just Launched
+
+📈 User Level System
+We just launched a leveling system on",Social
+2026-06-20T20:19:55.449Z,completion,summary,Llama 3.2 1B,,,3694,924,398,112,1217,3133,57.9,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Seu resumo semanal de cripto.&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;
+Ver preços de criptomoedas
+Principais altas e baixas do dia
+Boletim semanal
+Confira as principais histórias da última semana que estão moldando o mercado de criptomoedas:
+Fed mantém juros estáveis
+Na sua primeira reunião como presidente, Kevin Warsh liderou uma votação unânime do Federal Reserve para manter a taxa dos fed funds inalterada em 3,5%–3,75%, mantendo em aberto a possibilidade de novos aumentos diante das pressões inflacionárias no núcleo da inflação.
+UE se prepara para a MiCA
+Especialistas estão emitindo alertas finais para empresas de ativos digitais offshore à medida que se aproxima o prazo de conformidade de 1º de julho , marcando o fim formal do período de transição para operações não autorizadas em toda a União Europeia.
+SEC aprova fundo multiativo
+O acesso institucional a ativos foi ampliado após a Securities and Exchange Commission aprovar formalmente o fundo BlackRock BITA , diversificando o portfólio de veículos de investimento regulamentados disponíveis.
+Descubra as ferramentas de trading
+Baixar o app da OKX
+Precisa de ajuda? Fale com nosso atendimento ao cliente . Agradecemos por escolher a OKX. Caso não deseje mais receber nossas comunicações, cancele sua inscrição aqui .
+Este e-mail é fornecido apenas para fins informativos e não é uma oferta ou solicitação. Os ativos digitais, incluindo stablecoins e NFTs, envolvem um alto","Seu resumo semanal de cripto inclui:
+
+- Fed mantém juros estáveis em 3,5%–3,75%, enquanto a União Europeia se prepara para a MiCA
+- SEC aprova fundo multiativo para acesso institucional a ativos
+- OKX oferece download do seu aplicativo
+
+Importante: O e-mail menciona a disponibilidade de ferramentas de trading no app da OKX, o que pode ser uma oportunidade para investidores ou traders empreender."
+2026-06-20T20:19:55.961Z,completion,triage,Llama 3.2 1B,,,1760,440,10,1,510,510,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: OKX <updates@okx.com>
+Subject: Atualização semanal: Acesso institucional e pausa nos juros
+
+Seu resumo semanal de cripto.&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&",Newsletter
+2026-06-20T20:20:02.020Z,completion,summary,Llama 3.2 1B,,,3694,924,556,166,1519,6058,36.4,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Descubra camisas e polos no Outlet&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;
+Descubra camisas e polos no Outlet
+‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+Descubra camisas e polos no Outlet
+Ver online Descadastre-se
+Reserva Infantil
+Calçados
+Outlet
+Até 5X SEM JUROS no cartão
+TROCA por nossa conta
+FRETE GRÁTIS para clientes Prime
+Ganhe 10% OFF utilizando código do seu vendedor
+Se quiser tirar alguma dúvida ou bater um papo, entre em contato conosco pelos canais abaixo:
+Whatsapp
+Horários de atendimento:","Descubra camisas e polos no Outlet
+- Objetivo: Promover camisas e polos na loja Outlet.
+- Ferramentas: Camisas e polos, camisa de roupa, calçados, frigideiras, frete, código de desconto, e canais de contato.
+- Propósito: Aumentar a visibilidade e a presença do Outlet em relação à camisas e polos, tornando o empreendimento mais rentável.
+- Ações: 
+- Promover camisas e polos no Outlet na loja.
+- Aumentar a presença em redes sociais.
+- Encorajar os clientes a reservar infantil.
+- Oferecer descontos especiais e incentivos de loja para clientes primeiros."
+2026-06-20T20:20:03.339Z,completion,triage,Llama 3.2 1B,,,1753,438,8,1,1267,1315,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Reserva <noreply@mkt.usereserva.com>
+Subject: Eleve seu visual com até 60% OFF 👕👔
+
+Descubra camisas e polos no Outlet&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279;",Priority
+2026-06-20T20:20:12.019Z,completion,summary,Llama 3.2 1B,,,1600,400,848,223,810,8679,28.2,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Enquanto a seleção está em campo, seus R$ 500 mil podem estar trabalhando.Hoje o Brasil está em campo.
+
+Estádio cheio, camisa amarela, aquela tensão que só a Copa traz. De 4 em 4 anos, o mundo inteiro para.
+
+Você provavelmente vai assistir. Talvez com a família, talvez em algum lugar especial.
+
+Mas aqui está uma pergunta que poucos se fazem no intervalo:
+
+**Que decisão patrimonial você está deixando pra fazer depois da Copa — que poderia ter sido feita antes?**
+
+Durante o período do Mundial, a Liberta abriu uma janela específica para clientes como você: uma carta de consórcio de R$ 500 mil, sem um real de juros, com condições que só existem enquanto a Copa está acontecendo.
+
+Quem fechar durante esse período leva a camiseta oficial da Seleção Brasileira 2026 — Nike, autografada por Stormer ou Ulrich. Você escolhe.
+
+Não é bônus de banco. É o reconhecimento de uma decisão que merece ser comemorada.
+
+Quero saber mais sobre a carta 
+
+O Brasil vai em busca do Hexa.
+
+Você vai em busca do quê?
+
+Equipe Liberta
+
+**Você recebe este e-mail porque é cliente Liberta com R$ 1 milhão ou mais investidos na plataforma XP. Este benefício é exclusivo para esse perfil.**
+
+
+
+
+
+
+
+
+
+
+
+
+
+Enviado para: lucasespinosa159@gmail.com
+
+Cancelar inscrição 
+
+Liberta Investimentos, Avenida João Wallig, 1800 | Escritórios Boutique Sala 4002, Porto Alegre - RS, 91349-900, Brasil","Enquanto a seleção está em campo, os clientes que investiram R$ 1 milhão ou mais na plataforma XP podem receber uma carta de consórcio de R$ 500 mil sem juros, com condições exclusivas durante o período do Mundial. A decisão patrimonial feita durante esse período poderia ser uma pergunta que poucos se fazem no intervalo. A carta pode ser autografada por Stormer ou Ulrich e leva o cliente a uma camiseta oficial da Seleção Brasileira 2026, Nike.
+
+Action Needed:
+- Marcar uma inscrição para receber a carta de consórcio e informações adicionais sobre a carteira.
+
+Important Details:
+- O benefício é exclusivo para clientes que investiram R$ 1 milhão ou mais na plataforma XP.
+- A decisão patrimonial feita durante o período do Mundial poderia ser uma pergunta que poucos se fazem no intervalo.
+- A carta pode ser autografada por Stormer ou Ulrich."
+2026-06-20T20:20:13.036Z,completion,triage,Llama 3.2 1B,,,1753,438,10,1,1014,1014,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Liberta Investimentos <contato@liberta.com.vc>
+Subject: O Brasil joga hoje. E você?
+
+Enquanto a seleção está em campo, seus R$ 500 mil podem estar trabalhando.Hoje o Brasil está em campo.
+
+Estádio cheio, camisa amarela, aquela tensão que só a Copa traz. De 4 em 4 anos, o mundo inteiro para.
+
+Você provavelmente vai assistir. Talvez com a família, talvez em algum lugar especial.
+
+Mas aqui está uma pergunta que poucos se fazem no intervalo:
+
+**Que decisão patrimonial você está deixando pra fazer depois da Copa — que poderia ter sido feita antes?**
+
+Durante o período do Mundial, a Liberta abriu uma janela específica para clientes como você: uma carta de consórcio de R$ 500 mil, sem um real de juros, com condições que só existem enquanto a Copa está acontecendo.
+
+Quem fechar durante esse período leva a camiseta oficial da Seleção Brasileira 2026 — Nike, autografada por Stormer ou Ulrich. Você escolhe.
+
+Não é bônus de banco. É o reconhecimento de uma decisão que merece ser comemorada.
+
+Quero saber mais sobre a carta 
+
+O Brasil vai em busca do Hexa.
+
+Você vai em busca do quê?
+
+Equipe Liberta
+
+**Você recebe este e-mail porque é cliente Liberta com R$ 1 milhão ou mais investidos na plataforma XP. Este benefício é exclusivo para esse perfil.**
+
+
+
+",Newsletter
+2026-06-20T20:20:17.379Z,completion,summary,Llama 3.2 1B,,,3694,924,506,113,1417,4341,38.3,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+View image: ( 
+Follow image link: ( 
+Caption: 
+
+GM. This is Milk Road, your friend who already read the room so you don't have to.
+
+​Here’s what we’ve got for you today:
+
+* ✍️ Everything’s red… except these two.
+
+* 🎙️ The Milk Road Show: [The Case For Bitcoin As One Of The World’s 4 Most Important Technologies]( 
+
+* 🍪 Coinbase launched the first crypto-backed mortgage.
+
+==Bridge just released a free guide called ====**“The Stablecoin Playbook”**==== that covers the most prominent real-world use cases for stablecoins.====** **==[Download the free guide now.]( 
+
+View image: ( 
+Follow image link: ( 
+Caption: Prices as of 2:00 p.m. ET. Powered by CoinGecko.
+
+View image: ( [breaker]
+Caption: 
+
+# **EVERYTHING'S RED… EXCEPT THESE TWO ASSETS **💪
+
+Crypto's getting hammered.
+
+[Bitcoin]( down about 50% from its October peak of ~$126K - and close to $2T has walked out of crypto since it topped.
+
+Most of the market is some shade of red right now.
+
+But two crypto-adjacent stocks went the other way…
+
+Galaxy Digital ([GLXY]( is up 65.1% since late February, while Robinhood ([HOOD]( is up 52.6%.
+
+Both up double digits while crypto bleeds.
+
+View image: ( 
+Caption: Source: Giphy
+
+**Let’s look at Galaxy first…**
+
+A few weeks back, it got dragged down with everything else, falling about 11% in the selloff even as a run of good news hit.
+
+But the bull case never hung on crypto prices. It came down to Helios - Galaxy's buildout of AI data centers.
+
+Revenue from Helios is set to start landing in Q2, and that's the catalyst expected to re-rate the stock (Wall Street-speak for the market deciding a company's worth more and pricing it up).
+
+On top of that, deal flow picked up…
+
+Morgan Stanley started sending its wealthy clients to Galaxy to swap their crypto for ETP shares, which lets them make the switch from onchain rails, to TradFi rails - without triggering a taxable sale.
+
+Every deal like that adds to the same case: Galaxy as the plumbing between traditional finance and crypto.
+
+4 months on, GLXY is up 65.1%.
+
+And if Galaxy is ‘the institutional pipe,’ Robinhood's the consumer one…
+
+View image: ( 
+Follow image link: ( 
+Caption: 
+
+----------
+# [FREE GUIDE ON STABLECOINS ]( 
+
+Stablecoins are no longer a future bet, they’re a right-now decision.
+
+[Bridge (a Stripe company)]( just released a free guide called the **[“The Stablecoin Playbook”]( that covers the most prominent real-world use cases for stablecoins.**
+
+Here’s exactly what’s in the [free guide]( 
+
+* How to pick your use case for stablecoins and leverage them to expand globally
+
+* How to incorporate stablecoins into your user experience
+
+* Determine if launching your own stablecoin is the right path for your business
+
+**Stablecoins are going global & Bridge is powering that shift.**
+
+[Download the free guide on stablecoins now.]( 
+
+
+----------View image: ( [breaker]
+Caption: 
+
+# **EVERYTHING'S RED… EXCEPT THESE TWO ASSETS (P2) **💪
+
+HOOD jumped 11% in late May on a single headline: 
+
+The Treasury named it the first trustee for the ‘Trump Accounts’ - a new federal program that hands every eligible American kid an investment account.
+
+The fee Robinhood earns on that contract is tiny. It's a cost-plus deal (Robinhood charges its costs plus a slim margin), more of a break-even line on the books through 2026 than it is a moneymaker.
+
+But the real prize is the funnel it builds.
+
+Trump Accounts put Robinhood in f","* Crypto market is experiencing a significant downturn, with Bitcoin down 50% from its October peak and close to $2 trillion.
+* Two crypto-adjacent stocks, Galaxy Digital and Robinhood, have seen significant gains, with Galaxy Digital up 65.1% and Robinhood up 52.6%.
+* These gains are due in part to the launch of Helios, a data center by Galaxy Digital, and the trend of institutional investors using stablecoins for traditional finance, which is driven by Bridge's free guide, ""The Stablecoin Playbook""."
+2026-06-20T20:20:18.494Z,completion,triage,Llama 3.2 1B,,,1767,442,7,1,1114,1114,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Milk Road <newsletter@mail.milkroad.com>
+Subject: 🥛 Everything’s red... except these 2 assets 🔴
+
+View image: ( 
+Follow image link: ( 
+Caption: 
+
+GM. This is Milk Road, your friend who already read the room so you don't have to.
+
+​Here’s what we’ve got for you today:
+
+* ✍️ Everything’s red… except these two.
+
+* 🎙️ The Milk Road Show: [The Case For Bitcoin As One Of The World’s 4 Most Important Technologies]( 
+
+* 🍪 Coinbase launched the first crypto-backed mortgage.
+
+==Bridge just released a free guide called ====**“The Stablecoin Playbook”**==== that covers the most prominent real-world use cases for stablecoins.====** **==[Download the free guide now.]( 
+
+View image: ( 
+Follow image link: ( 
+Caption: Prices as of 2:00 p.m. ET. Powered by CoinGecko.
+
+View image: ( [breaker]
+Caption: 
+
+# **EVERYTHING'S RED… EXCEPT THESE TWO ASSETS **💪
+
+Crypto's getting hammered.
+
+[Bitcoin]( down about 50% from its October peak of ~$126K - and close to $2T has walked out of crypto since it topped.
+
+Most of the market is some shade of red right now.
+
+But two crypto-adjacent stocks went the other way…
+
+Galaxy Digital ([GLXY]( is up 65.1% since late February, while Robinhood ([HOOD]( is up 52.6%.
+
+Both up double digits while crypto bleeds.
+
+View image: ( 
+Cap",Receipt
+2026-06-20T20:20:24.752Z,completion,summary,Llama 3.2 1B,,,3694,924,803,155,1315,6256,31.2,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+View this post on the web at 
+
+If AI model capabilities continue to improve fast — and relatively in sync across frontier labs — the lab with the most compute will win in the end, OpenAI president Greg Brockman suggested at the Big Technology AI Summit on Thursday.
+“There just is not going to be enough compute in the world to satisfy all the demand,” Brockman said. “Right now, we’re talking about compute constraints and the number of people using these agents is — the order of 10 million, 20 million maybe — we’re not at planet scale.”
+“ChatGPT is like a billion users,” Brockman continued, “but we haven’t brought the agentic power there yet, so you’re just looking at these factors and the depth of usage is also tiny compared to where we’re going.”
+Brockman’s view explains why OpenAI has been investing so heavily in its datacenter buildout. The company is engaged in a historic investment in compute. It raised $122 billion [ ] earlier this year, and much of it will go towards building the infrastructure needed to serve these use cases. Competitors have chided the company for its spending — Anthropic CEO Dario Amodei called it “YOLOing” — but for Brockman, the buildout is a core element of how OpenAI plans to win over time.
+At the summit, Brockman also outlined OpenAI’s vision for an AI product experience where the bots take action for you, noting platforms like Codex are catching on even with people doing non-software work. The way he sees it, the right form factor and the right capabilities have to match up to get the most out of AI models, adding that the best way to interact with a computer might be to talk with it verbally instead of typing everything.
+“The beautiful thing about AI is it’s really about bringing the machine closer to the human,” Brockman said. “Rather than us having to contort ourselves to find files, folders, and all these details that somehow are not natural, that are more about how the machine operates rather than how we operate.”
+Brockman also downplayed speculation of a potential price war with competitors, saying only that pricing will keep going down in the long term even without expecting a “massive shift in the short term.” He thinks frontier intelligence will always remain the most expensive tier.
+“The most important thing that is happening right now is the usage of AI in the economy to really transform the economy and to uplift everyone,” Brockman said. “And so I think that is something I’m really focused on. And the more that people are trying to make that happen, I think that that’s better for everyone.”
+Other highlights from yesterday’s AI Summit below…
+A monthly outlook for leaders navigating what’s next (sponsor)
+Welcome to Things to Know for TMT, where PwC shares the signals shaping technology, media and telecommunications—and the insights that can help you move forward. TMT companies are both building the AI economy and being transformed by it. In a market defined by constant change, TMT leaders need a clear view of what’s shifting, why it matters, and where to focus next. Each edition of this newsletter highlights the unique trends reshaping the industry, with practical insights to help your business respond with clarity and confidence. Not every signal will hit your agenda today. Focus on what moves your business forward.
+Mike Krieger and the fate of Fable
+Anthropic Head of Labs Mike Krieger isn’t sure what will happen to Fable 5 or why it’s been singled out by the U.S. government. But ","OpenAI CEO Greg Brockman discussed the importance of investing in AI infrastructure to compete with other companies. He stated that the lab with the most compute will win in the end, as there are only 10 million users and the demand for AI models is still relatively low. The company is raising $122 billion to build its datacenter infrastructure and has a long-term plan to transition from a lab model to a more commercial one.
+
+Action needed: Review and update the company's AI product experience vision to focus on the right form and capabilities.
+
+Important details: The company is investing heavily in its datacenter buildout and plans to transition from a lab model to a commercial one. The goal is to bring AI models closer to the human experience, rather than just providing a machine interface."
+2026-06-20T20:20:25.669Z,completion,triage,Llama 3.2 1B,,,1816,454,8,1,912,913,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Marty Swant and Alex Kantrowitz from Big Technology <bigtechnology@substack.com>
+Subject: Greg Brockman On OpenAI’s Plan To Win: Compute Rules All
+
+View this post on the web at 
+
+If AI model capabilities continue to improve fast — and relatively in sync across frontier labs — the lab with the most compute will win in the end, OpenAI president Greg Brockman suggested at the Big Technology AI Summit on Thursday.
+“There just is not going to be enough compute in the world to satisfy all the demand,” Brockman said. “Right now, we’re talking about compute constraints and the number of people using these agents is — the order of 10 million, 20 million maybe — we’re not at planet scale.”
+“ChatGPT is like a billion users,” Brockman continued, “but we haven’t brought the agentic power there yet, so you’re just looking at these factors and the depth of usage is also tiny compared to where we’re going.”
+Brockman’s view explains why OpenAI has been investing so heavily in its datacenter buildout. The company is engaged in a historic investment in compute. It raised $122 billion [ ] earlier this year, and much of it will go towards building the infrastructure needed to serve these use cases. Competitors have chided the company for its spending — Anthropic CEO Dario Amodei called it “YOLOing” — but for Brockman, the buildout is a core e",Priority
+2026-06-20T20:20:29.914Z,completion,summary,Llama 3.2 1B,,,2468,617,463,110,1214,4243,36,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Get in on the action now...  
+
+USA vs Australia, Scotland vs Morocco, Brazil vs Haiti & Türkiye vs Paraguay — see what $100 pays on every side.
+
+( )
+
+World Cup  •  Friday, June 20
+
+***************************
+Four games. Pick your side.
+***************************
+
+Live odds on Polymarket · 3:00 PM to 11:00 PM ET
+
+Check Out All Matches → ( )
+
+3:00 PM ET  • Lumen Field, Seattle
+
+USA
+USA
+
+$100 → $164 ( )
+
+Draw 23%
+
+$100 → $425
+
+VS. ( )
+
+Australia
+Australia
+
+$100 → $513 ( )
+
+USA 60% ( )
+
+Draw 23% ( )
+
+AUS 19% ( )
+
+6:00 PM ET  • Gillette Stadium, Foxborough
+
+Scotland
+Scotland
+
+$100 → $506 ( )
+
+Draw 27%
+
+$100 → $357
+
+VS. ( )
+
+Morocco
+Morocco
+
+$100 → $171 ( )
+
+SCO 19% ( )
+
+Draw 27% ( )
+
+MAR 56% ( )
+
+8:30 PM ET  • Lincoln Financial Field, Philadelphia
+
+Brazil
+Brazil
+
+$100 → $112 ( )
+
+Draw 8%
+
+$100 → $1,195
+
+VS. ( )
+
+Haiti
+Haiti
+
+$100 → $1,909 ( )
+
+BRA 89% ( )
+
+Draw 8% ( )
+
+HAI 5% ( )
+
+11:00 PM ET  • Levi's Stadium, Santa Clara
+
+Türkiye
+Türkiye
+
+$100 → $203 ( )
+
+Draw 29%
+
+$100 → $333
+
+VS. ( )
+
+Paraguay
+Paraguay
+
+$100 → $386 ( )
+
+TUR 48% ( )
+
+Draw 29% ( )
+
+PAR 25% ( )
+
+( )
+
+Live Stats
+
+Follow every match with live play-by-play, win probability, lineups, and venue details.
+
+Watch Live → ( )
+
+( )
+
+World Cup Combos Are Active
+
+Place a combo trade for a chance at a larger payout
+
+Trade Combos Now → ( )
+
+Polymarket  •  Trending Now
+
+Beyond the World Cup
+
+Live markets · place your trade
+
+Geopolitics
+Strait of Hormuz Traffic Returns to Normal by June 30?
+
+10% chance · $24.8M volume
+
+$100
+
+10% chance ( )
+
+Crypto
+Bitcoin Hits $67,500 in June?
+
+26% chance · $18M volume
+
+$357
+
+26% chance ( )
+
+Politics
+Next Prime Minister of Israel — Eizenkot?
+
+37% chance · $17M volume
+
+$270
+
+37% chance ( )
+
+Culture
+Highest Grossing Movie 2026 — Spider-Man: Brand New Day?
+
+64% chance · $11.9M volume
+
+$150
+
+64% chance ( )
+
+Live Odds
+
+Explore Trending Markets → ( )
+
+ 
+
+Polymarket ( )
+
+Instagram ( )
+
+Discord ( )
+
+X ( )
+
+News ( )
+
+Payouts shown reflect market prices at send time and change as the market moves.
+
+Feedback? Email support@polymarket.com. Don’t want these emails? Unsubscribe ( ).","Here is a summary of the email in 2-4 sentences:
+
+The email announces four World Cup matches with odds on the outcome, ranging from $100 to $1000. Users can pick their side and choose to bet on specific games, with live odds provided at 3:00 PM, 6:00 PM, and 8:30 PM ET. The email also mentions a World Cup combo trade and a cryptocurrency market, with live prices and updates available. Users can place a World Cup combo trade to potentially win a larger payout."
+2026-06-20T20:20:31.034Z,completion,triage,Llama 3.2 1B,,,1746,437,10,1,1115,1116,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Polymarket <noreply@polymarket.com>
+Subject: Four World Cup Matches Today 🏆
+
+Get in on the action now...  
+
+USA vs Australia, Scotland vs Morocco, Brazil vs Haiti & Türkiye vs Paraguay — see what $100 pays on every side.
+
+( )
+
+World Cup  •  Friday, June 20
+
+***************************
+Four games. Pick your side.
+***************************
+
+Live odds on Polymarket · 3:00 PM to 11:00 PM ET
+
+Check Out All Matches → ( )
+
+3:00 PM ET  • Lumen Field, Seattle
+
+USA
+USA
+
+$100 → $164 ( )
+
+Draw 23%
+
+$100 → $425
+
+VS. ( )
+
+Australia
+Australia
+
+$100 → $513 ( )
+
+USA 60% ( )
+
+Draw 23% ( )
+
+AUS 19% ( )
+
+6:00 PM ET  • Gillette Stadium, Foxborough
+
+Scotland
+Scotland
+
+$100 → $506 ( )
+
+Draw 27%
+
+$100 → $357
+
+VS. ( )
+
+Morocco
+Morocco
+
+$100 → $171 ( )
+
+SCO 19% ( )
+
+Draw 27% ( )
+
+MAR 56% ( )
+
+8:30 PM ET  • Lincoln Financial Field, Philadelphia
+
+Brazil
+Brazil
+
+$100 → $112 ( )
+
+Draw 8%
+
+$100 → $1,195
+
+VS. ( )
+
+Haiti
+Haiti
+
+$100 → $1,909 ( )
+
+BRA 89% ( )
+
+Draw 8% ( )
+
+HAI 5% ( )
+
+11:00 PM ET  • Levi's Stadium, Santa Clara
+
+Türkiye
+Türkiye
+
+$100 → $203 ( )
+
+Draw 29%
+
+$100 → $333
+
+VS. ( )
+
+Paraguay
+Paraguay
+
+$100 → $386 ( )
+
+TUR 48% ( )
+
+Draw 29% ( )
+
+PAR 25% ( )
+
+( )
+
+Live",Newsletter
+2026-06-20T20:20:34.873Z,completion,summary,Llama 3.2 1B,,,2691,673,473,98,1113,3838,35.6,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Queue for any GPU spec, plus: new H100 SXM capacity in AP-IN-1 and sign up to hear what's new in Serverless
+
+h100 new (1) ( )
+
+H100 SXMs Available in AP-IN-1 ( )
+
+Good news: more H100 SXM capacity is live in our AP-IN-1 region. It's available now for single-pod and Instant Cluster deployments, no reservations required.
+
+For distributed training and large-scale inference: Instant Clusters let you spin up multi-node H100 SXM clusters on demand. No provisioning delays, no advance reservation. Each node ships with 8× H100 SXMs, 3,200 Gbps GPU interconnect, and 640 GB of GPU memory. 17,920 GB of total GPU memory across the cluster.
+
+For smaller workloads: 1–8 GPU pod configurations with fast startup times and the same high-bandwidth interconnect — sized for inference serving, fine-tuning runs, and anything in between.
+
+If you're serving users in India or Southeast Asia, or if you need APAC-region capacity for compliance or latency reasons, this is the build.
+
+Deploy an Instant Cluster →
+( )
+
+🚀 Deploy When Available is live ( )
+
+You can stop refreshing the console. Queue for any GPU spec and Runpod will deploy your pod the moment capacity opens up.
+
+One thing to know: billing starts the moment your pod deploys, not when you log back in. If a card frees up at 3am and you're asleep, you'll be billed for that time. Use the subscription window to set off-limits hours.
+
+Read blog →
+( )
+
+🎥 New and coming soon in Runpod Serverless on June 25 ( )
+
+Catch Greg from the Serverless product team next Thursday, 6/25 in this dedicated webinar. He'll cover the hot starts architecture, how the model cache actually works, and introduce batch inference for workloads that don't need to run in real time.
+
+Register for the webinar →
+( )
+
+📅 Runpod Flash Hackathon on June 30 ( )
+
+Join us for a full-day hackathon in San Francisco that's open to everyone! Build something on Flash, get in-person mentorship, compete for cash and credits. Remote submissions welcome.
+
+Sign up here →
+( )
+
+If you have questions about Runpod or want to reach our sales team, book a call with us here ( )
+
+Runpod Inc., 1181 Nixon Drive #1158, Moorestown, NJ 08057, United States
+
+Unsubscribe ( )
+Manage preferences ( )
+
+285a8cc5-d612-4e07-811f-3706b79bb819-01JPB7ZJQV8FWBKZ2AJ2F3P6XN-1 ( )
+
+1741985493522_discord (1)_01JPB6TCJ3JVT9N4ZWYJF8ZAQV-1 ( )
+
+1741985658895_twitter_01JPB6ZE221ZAQBC5PBHBEAYEZ-1 ( )
+
+1741985485779_linkedin_01JPB6T508TW5H4Y79PGCS73RD-1 ( )","Here is a summary of the email in 2-4 sentences:
+
+The email provides information about the new H100 SXM capacity in the AP-IN-1 region, which includes instant clusters and 1-8 GPU pod configurations. This is part of the company's efforts to provide scalable and flexible computing resources. The email also announces a webinar on June 25 to discuss the hot starts architecture and batch inference. Additionally, there are two flash hacking challenges being held on June 30."
+2026-06-20T20:20:35.791Z,completion,triage,Llama 3.2 1B,,,1745,436,10,1,913,914,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Runpod Team <team@runpod.io>
+Subject: H100 SXMs just landed in Asia Pacific
+
+Queue for any GPU spec, plus: new H100 SXM capacity in AP-IN-1 and sign up to hear what's new in Serverless
+
+h100 new (1) ( )
+
+H100 SXMs Available in AP-IN-1 ( )
+
+Good news: more H100 SXM capacity is live in our AP-IN-1 region. It's available now for single-pod and Instant Cluster deployments, no reservations required.
+
+For distributed training and large-scale inference: Instant Clusters let you spin up multi-node H100 SXM clusters on demand. No provisioning delays, no advance reservation. Each node ships with 8× H100 SXMs, 3,200 Gbps GPU interconnect, and 640 GB of GPU memory. 17,920 GB of total GPU memory across the cluster.
+
+For smaller workloads: 1–8 GPU pod configurations with fast startup times and the same high-bandwidth interconnect — sized for inference serving, fine-tuning runs, and anything in between.
+
+If you're serving users in India or Southeast Asia, or if you need APAC-region capacity for compliance or latency reasons, this is the build.
+
+Deploy an Instant Cluster →
+( )
+
+🚀 Deploy When Available is live ( )
+
+You can stop refreshing the console. Queue for any GPU spec and Runpod will deploy your pod the moment capacity opens up.
+
+One thing to kno",Newsletter
+2026-06-20T20:20:38.519Z,completion,summary,Llama 3.2 1B,,,861,215,436,83,536,2726,37.4,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+email_broad_bf_cadeiras_home_office_202511
+se esse email não abrir corretamente, 
+
+clique aqui. 
+
+
+
+
+
+
+
+
+
+
+
+Reúna a família, os amigos e viva cada emoção em um ambiente ainda
+
+mais aconchegante
+
+
+
+
+
+
+
+Chegou a hora de renovar sua casa com condições especiais
+
+
+
+
+
+
+
+
+
+Sua torcida tem lugar. Seu conforto também.
+
+
+
+
+
+
+
+Descubra produtos selecionados com descontos especiais e transforme sua
+
+casa no melhor lugar para torcer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Se você não deseja receber nossas comunicações, clique aqui.
+FLEXFORM
+
+Avenida Papa Joao Paulo I, 1849Cumbica Guarulhos, SP, 07170-350, BR
+
+
+
+Update Profile","The email is a promotional message from FLEXFORM, a company offering home improvement products, asking users to visit their website to learn more about their services and products. The email is designed to entice users to visit the website. The sender is inviting users to ""reunite"" with family and friends and create a more comfortable home. The email also encourages users to share their experiences and receive discounts on products."
+2026-06-20T20:20:39.334Z,completion,triage,Llama 3.2 1B,,,1243,311,10,1,813,813,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Flexform <newsletter@mkt.flexform.com.br>
+Subject: Até 50% OFF para transformar seu lar em arquibancada🏟️
+
+email_broad_bf_cadeiras_home_office_202511
+se esse email não abrir corretamente, 
+
+clique aqui. 
+
+
+
+
+
+
+
+
+
+
+
+Reúna a família, os amigos e viva cada emoção em um ambiente ainda
+
+mais aconchegante
+
+
+
+
+
+
+
+Chegou a hora de renovar sua casa com condições especiais
+
+
+
+
+
+
+
+
+
+Sua torcida tem lugar. Seu conforto também.
+
+
+
+
+
+
+
+Descubra produtos selecionados com descontos especiais e transforme sua
+
+casa no melhor lugar para torcer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Se você não deseja receber nossas comunicações, clique aqui.
+FLEXFORM
+
+Avenida Papa Joao Paulo I, 1849Cumbica Guarulhos, SP, 07170-350, BR
+
+
+
+Update Profile",Newsletter
+2026-06-20T20:20:42.666Z,completion,summary,Llama 3.2 1B,,,1152,288,317,80,708,3331,30.1,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Produto técnico dura. O barato, você já sabe como termina. 
+
+
+
+Preço baixo vira “economia” só quando o produto aguenta a vida real.
+
+Quando não aguenta, você paga de novo - com troca, frustração e improviso. 
+
+No mundo ao ar livre e na rotina, o que funciona importa.
+
+
+
+Material técnico, design pensado pra uso real e peças que não dependem de “moda”. No fim, é liberdade: menos preocupação, mais caminho.
+
+
+
+**Itens que resolvem**
+
+**(na rotina e no mundo ao ar livre).**
+
+
+
+
+
+
+
+
+
+
+
+Menos troca, menos estresse. Mais uso de verdade.
+
+Ver itens essenciais 
+
+
+
+
+
+
+
+Enviado para: lucasespinosa159@gmail.com
+
+©2026 Galapagos Outdoor. Todos os direitos reservados. R.BRANDS LTDA - CNPJ 13.992.333/0001-96 / Inscrição Estadual: 257426558. Endereço , Avenida Governador Adolfo Konder, 705 BL 01 - Armazém 07, Itajaí - Santa Catarina, 88308-001, Brasil
+
+Caso não queira mais receber estes e-mails, cancele sua inscrição.","O produto é uma solução técnica durável para o mundo ao ar livre, com um preço baixo que vale a pena quando aguenta. A empresa Galapagos Outdoor oferece itens essenciais que não dependem de ""moda"", como peças para uso real. Os itens resolvem problemas de troca e estresse, proporcionando mais uso e menos preocupação."
+2026-06-20T20:20:43.681Z,completion,triage,Llama 3.2 1B,,,1534,384,10,1,911,1014,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Galapagos Outdoor <novidades@mkt.galapagosoutdoor.com.br>
+Subject: O desconto que você não vê na etiqueta 
+
+Produto técnico dura. O barato, você já sabe como termina. 
+
+
+
+Preço baixo vira “economia” só quando o produto aguenta a vida real.
+
+Quando não aguenta, você paga de novo - com troca, frustração e improviso. 
+
+No mundo ao ar livre e na rotina, o que funciona importa.
+
+
+
+Material técnico, design pensado pra uso real e peças que não dependem de “moda”. No fim, é liberdade: menos preocupação, mais caminho.
+
+
+
+**Itens que resolvem**
+
+**(na rotina e no mundo ao ar livre).**
+
+
+
+
+
+
+
+
+
+
+
+Menos troca, menos estresse. Mais uso de verdade.
+
+Ver itens essenciais 
+
+
+
+
+
+
+
+Enviado para: lucasespinosa159@gmail.com
+
+©2026 Galapagos Outdoor. Todos os direitos reservados. R.BRANDS LTDA - CNPJ 13.992.333/0001-96 / Inscrição Estadual: 257426558. Endereço , Avenida Governador Adolfo Konder, 705 BL 01 - Armazém 07, Itajaí - Santa Catarina, 88308-001, Brasil
+
+Caso não queira mais receber estes e-mails, cancele sua inscrição.",Newsletter
+2026-06-20T20:20:51.459Z,completion,summary,Llama 3.2 1B,,,3694,924,1057,210,1216,7774,31.9,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+View in browser ( )
+
+-->
+
+( )
+
+PRESENTED BY
+
+( )
+
+Here's what you'll find in this issue: - **Amin Memon turned freelance design** into a subscription business. Eight years later, Draftss is a multi-seven-figure operation with a team of 70. - **5 vibe coding tools.** Some of the latest apps for codin
+
+Here's what you'll find in this issue:
+
+* Amin Memon turned freelance design into a subscription business. Eight years later, Draftss is a multi-seven-figure operation with a team of 70.
+* 5 vibe coding tools. Some of the latest apps for coding with AI.
+* Yesterday's build board winners, including three new product launches from indie hackers.
+* 30-second growth tip: Repackage the market leader's expensive tool for the customers they ignore.
+
+Still using ChatGPT for serious work? Try Hatch instead ( ).
+
+Built by the founders of Indie Hackers, Hatch is the most productive AI assistant ever made. Use code INDIE30FREE for 100% off your first month.
+
+----------------------------------------------------------------
+Amin Memon turned freelance design into a 70-person operation 🏗️
+----------------------------------------------------------------
+
+Amin Memon started out by packaging his own freelance design work into a subscription. He figured startups wanted speed and reliability over the usual freelancer mess. Eight years later, his business, Draftss, is a multi-seven-figure operation with a team of 70 serving thousands of founders. He built the whole thing bootstrapped, with no funding and no big ""launch moment."" So basically he just survived long enough to figure things out.
+
+Here's the model. Companies pay a monthly fee for an on-demand creative and dev team instead of hiring in-house or managing a rotating cast of freelancers. Most of the growth has come from retention and word-of-mouth.
+
+When Amin realized how annoying cold email infrastructure was for his own outbound work, he productized that too. Deliveryman(.)ai is now its own subscription business.
+
+Lots of indie hackers get stuck in the loop of trading dollars for hours. This is a case study on how to break that loop and actually scale a service business. Enjoy!
+
+Read the full article → ( )
+
+-----------------------------------------------
+Build and monetize your business with Lovable 🩷
+-----------------------------------------------
+
+( )
+
+Most founders validate their product ideas with surveys. But there's only one wayto truly test willingness to pay: by charging your users.
+
+Lovable ( ) lets you launch a full-stack app with customer logins, payments, and a real backend, just by describing what you want in plain English. No long timelines,no heavy resourcing. And since payments are built in, you can monetize it from day one — real money from a real product.
+
+And every app is discoverable by default: real HTML that search engines can read from day one, with a built-in SEO agent that tells you what's working and what to fix next.
+
+Launch your first paying product this week ( ) and get $5 off your first month of Lovable with code INHA-05-0626 ( )
+
+-----------------------------
+Vibe coding tools to try 🧑🏻‍💻
+-----------------------------
+
+* Hatch ( ): Ditch ChatGPT. Use the most productive AI assistant ever made. Thoughtfully crafted by the founders of Indie Hackers.
+
+* Cursor ( ): AI code editor that predicts your next edit and understands your project context.
+
+* Continue ( ): Create custom AI copilots in VS Code or JetBrains ","Here's a summary of the email in 2-4 sentences:
+
+Amin Memon, a former freelance designer, turned his business into a multi-seven-figure operation with 70 employees and a team of 70. He launched a subscription-based design and dev team service called Draftss, and also developed a product called Hatch, a productivity AI assistant. The founders of Indie Hackers, who also developed Hatch, recommend Hatch as a solution for building productive AI assistants.
+
+Key points:
+- Amin Memon turned his freelance design business into a successful operation with 70 employees.
+- Draftss is a multi-seven-figure business with a subscription-based design and dev team service.
+- Hatch is a productivity AI assistant developed by the founders of Indie Hackers.
+
+Action needed:
+- Try Hatch, a productivity AI assistant, as recommended by the founders of Indie Hackers.
+
+Important details:
+- The founders of Indie Hackers developed Hatch as a solution for building productive AI assistants.
+- Hatch is the most productive AI assistant ever made, according to the founders."
+2026-06-20T20:20:52.384Z,completion,triage,Llama 3.2 1B,,,1815,454,10,1,923,923,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Indie Hackers <channing@indiehackers.com>
+Subject: 🗞️ What's New: Freelance to multi-7-figures, profit by repackaging tools, negative ROI on AI?
+
+View in browser ( )
+
+-->
+
+( )
+
+PRESENTED BY
+
+( )
+
+Here's what you'll find in this issue: - **Amin Memon turned freelance design** into a subscription business. Eight years later, Draftss is a multi-seven-figure operation with a team of 70. - **5 vibe coding tools.** Some of the latest apps for codin
+
+Here's what you'll find in this issue:
+
+* Amin Memon turned freelance design into a subscription business. Eight years later, Draftss is a multi-seven-figure operation with a team of 70.
+* 5 vibe coding tools. Some of the latest apps for coding with AI.
+* Yesterday's build board winners, including three new product launches from indie hackers.
+* 30-second growth tip: Repackage the market leader's expensive tool for the customers they ignore.
+
+Still using ChatGPT for serious work? Try Hatch instead ( ).
+
+Built by the founders of Indie Hackers, Hatch is the most productive AI assistant ever made. Use code INDIE30FREE for 100% off your first month.
+
+----------------------------------------------------------------
+Amin Memon turned freelance design into a 70-person operation 🏗️
+----------------------------------------------------------------
+
+Amin Memon started ",Newsletter
+2026-06-20T20:20:59.049Z,completion,summary,Llama 3.2 1B,,,3694,924,590,119,1516,6664,22.9,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Colosseum [ 
+
+
+Colosseum Codex [ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Colosseum Codex: Hackathons and AI, Scale or Die London, mtnDAO X [ 
+
+
+
+
+
+
+
+
+
+
+
+
+By Mike Hale • 19 Jun 2026
+
+
+View in browser [ 
+
+
+
+
+View in browser [ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I'm squeezing in the writing of this issue between ⚽World Cup matches (GO USA!) but Solana doesn't take ""hydration breaks""!
+
+This issue looks at how AI is impacting Solana hackathons, and two major upcoming in-person events this year, Scale or Die in London this November and mtnDAO X in Salt Lake City, both are gatherings of top Solana builders and teams.
+
+And while we debate what the Solana Foundation should and shouldn't promote, we get direct advice on what helps earn a retweet or devtool grant.
+
+----------------------------------------
+
+ 
+
+
+🔥 Hackathons in the Age of AI
+
+The 1880 Volta Prize, the award Napoleon III's namesake competition gave Alexander Graham Bell for inventing the telephone. Bell used the prize money to fund a laboratory for continued research and commercialization.
+
+Colosseum frames its own hackathon the same way, as a starting point.
+
+The hackathon itself has scaled fast. The most recent edition drew almost 2x the submissions of the previous one, with notably higher quality.
+
+The format has shifted from the 48-hour sprint toward an integrated pipeline of hackathon, accelerator, and venture fund working together to generate new crypto startups rather than one-off demos.
+
+That shift tracks a change in how fast founders move. AI has shrunk the gap from idea to working product from months to a week, sometimes days. New business creation is up nearly 2x year over year, and the time to reach $1M in revenue has been cut in half, with small teams running on agent swarms instead of headcount.
+
+Colosseum has built its own AI tooling to keep pace.
+
+Copilot turns AI coding agents into startup analysts, with access to more than 8,000 hackathon submissions and 84,000 curated documents.
+
+A cofounder-matching tool connects builders by skill set, commitment level, timeline, and location.
+
+Underneath it all sits an internal evaluation engine, what the team calls its ""Cerebro,"" that scores submissions on founder-market fit, product velocity, user demand, market timing, automating the first pass of project review before any human looks at it.
+
+Colosseum treats the prize as a beginning, not a finish line, carrying teams that emerge in the arena forward into startups, and the best of those startups into the platforms that will grow the entire ecosystem.
+
+Bottom line: The demo-day finish line isn't the goal. Teams worth funding are the ones who know what to build, not how fast they can build it.
+
+The Volta Prize, Colosseum, and Hackathons in the Age of AI [ 
+
+----------------------------------------
+
+ 
+
+
+🛠️ Scale or Die
+
+Solana Accelerate is bringing back Scale or Die, its application-only technical summit, for engineers, validators, protocol developers, infrastructure teams, and researchers working on Solana.
+
+The Solana Foundation explicitly bills it as ""not a general crypto event"". No marketing decks, no sales pitches, just workshops and sessions on validator performance, consensus mechanics, transaction landing, RPC infrastructure, Firedancer, post-quantum readiness, and high-performance onchain applications.
+
+A DevCave space gives attendees direct access to ","The Solana Foundation is hosting two upcoming events: Scale or Die in London this November and mtnDAO X in Salt Lake City this year. The events are aimed at Solana builders and teams, and focus on hackathons, AI, and venture fund working together to generate new crypto startups. The hackathons are designed to scale quickly, using AI tools to accelerate the creation process. The foundation also provides tools such as Copilot and Cerebro to help teams evaluate submissions and identify potential startups. The focus is on building and scaling new projects, rather than just demoing ideas."
+2026-06-20T20:20:59.967Z,completion,triage,Llama 3.2 1B,,,1775,444,8,1,812,914,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Colosseum <colosseum@ghost.io>
+Subject: Colosseum Codex: Hackathons and AI, Scale or Die London, mtnDAO X
+
+Colosseum [ 
+
+
+Colosseum Codex [ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Colosseum Codex: Hackathons and AI, Scale or Die London, mtnDAO X [ 
+
+
+
+
+
+
+
+
+
+
+
+
+By Mike Hale • 19 Jun 2026
+
+
+View in browser [ 
+
+
+
+
+View in browser [ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I'm squeezing in the writing of this issue between ⚽World Cup matches (GO USA!) but Solana doesn't take ""hydration breaks""!
+
+This issue looks at how AI is impacting Solana hackathons, and two major upcoming in-person events this year, Scale or Die in London this November and mtnDAO X in Salt Lake City, both are gatherings of top Solana builders and teams.
+
+And while we debate what the Solana Foundation should and shouldn't promote, we get direct advice on what helps earn a retweet or devtool grant.
+
+----------------------------------------
+
+ 
+
+
+🔥 Hackathons in the Age of AI
+
+The 1880 Volta Prize, the award Napoleon III's namesake competition gave Alexander Graham Bell for inventing the telephone. Bell used the prize money to fund a laboratory for continued research and commercialization.
+
+Colosseum frames its own hackathon the same way, as a ",Priority
+2026-06-20T20:21:03.002Z,completion,summary,Llama 3.2 1B,,,3694,924,32,7,2831,3034,29.6,,,"Summarize the following email in 2-4 sentences (about 40-60 words). Capture the key points, any action needed, and important details. Reply with only the summary, no preamble or quotes.
+
+Email:
+Peças casuais muito confortáveis&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;
+Peças casuais muito confortáveis
+‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+Peças casuais muito confortáveis
+Ver online Descadastre-se
+Reserva Infantil
+Calçados
+Outlet
+Até 5X SEM JUROS no cartão
+TROCA por nossa conta
+FRETE GRÁTIS para clientes Prime
+Ganhe 10% OFF utilizando código do seu vendedor
+Se quiser tirar alguma dúvida ou bater um papo, entre em contato conosco pelos canais a",Peças casuais muito confortáveis
+2026-06-20T20:21:03.918Z,completion,triage,Llama 3.2 1B,,,1767,442,8,1,811,913,,,,"Classify this email into exactly one category: Priority, Newsletter, Receipt, or Social.
+- Priority: a real person writing to you, or anything needing your reply or action.
+- Newsletter: marketing, promotions, digests, announcements, mailing lists.
+- Receipt: orders, invoices, payments, shipping, bookings, confirmations.
+- Social: notifications from social networks (likes, follows, comments, invites).
+Reply with ONLY the single category word, nothing else.
+
+From: Reserva <noreply@mkt.usereserva.com>
+Subject: Moletom: clássico do inverno, com a cara da Reserva
+
+Peças casuais muito confortáveis&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &#847;&#8199; &#65279; &",Priority
+2026-06-20T20:21:29.754Z,completion,digest,Llama 3.2 1B,,,9559,2390,2074,640,3236,25834,28.3,,,"You are summarizing the user’s unread inbox. Below are their unread emails. Write a concise digest that prioritizes what matters and flags anything needing a reply or action. Use short bullet points, mention the sender, and keep it skimmable. Reply with only the digest.
+
+Unread emails:
+1. From NYT Cooking — Bowen Yang’s mapo tofu
+Bowen Yang's mother shares a recipe for mapo tofu, a dish she adapted by adding tingly Sichuan peppercorns and doubanjiang to a pork-based version. The recipe includes details on ingredients, cooking time, and serving suggestions. The dish is adapted from the New York Times Cooking studio kitchen.
+
+2. From Leandro Ruschel — O que Olavo diria sobre o Brasil de hoje?
+Lucas espinosa agradece a oportunidade de falar sobre a análise técnica como ferramenta chave para entender a política do Brasil. Ele destaca a importância do mercado e a decisão de investir em estratégias que podem trazer lucro. O episódio foi gravado em uma entrevista para a Infomoney e inclui a ligação inesperada do CEO da XP, o que mostra que a análise técnica pode ser uma ferramenta eficaz para entender a economia.
+
+3. From GOG.COM — 2LHKA4VFRKYHNULUMT expires in 24 HOURS
+From: [Email Address]
+To: [Recipient's Email]
+Date: [Date]
+
+Key points:
+
+* The recipient's [business/organization] is planning a marketing campaign to promote a new product.
+* The campaign involves creating targeted ads on social media platforms.
+* The recipient needs to provide the necessary information, including product details and target audience demographics.
+
+Action needed:
+- Provide the necessary information for the marketing campaign
+- Review and approve the campaign concept before proceeding
+- Review the campaign budget and timeline with the marketing team
+
+Important details:
+
+* The campaign will run for 6 weeks, with regular check-ins and feedback sessions
+* The marketing team will handle the campaign's social media management and ad creation
+* The recipient's team will review the campaign's progress and provide input on future campaigns
+
+4. From Duolingo — 📈 Uau, ‎Lucas Espinosa‎… Olha quanto progresso em inglês!
+A email contém uma mensagem de motivação para um usuário, onde é apresentado um progresso semanal de 1007 dias, com uma taxa de avanço de 34% em relação à semana anterior. A ofensiva é considerada ""excepcional"" e o usuário é incentivado a continuar aprendendo para alcançar um nível de progresso semanal. Além disso, a empresa oferece uma opção para cancelar o cadastro.
+
+5. From カイカイキキふるさと納税 — ふるさと納税各サイトにて「Murakami․Flowers Collectible Trading Card - Akibahara Flowers（BOX)」の受付を開始いたします。
+The email appears to be a formal invitation for a meeting between Mr. Akibahara and Mr. Tokyou, and the Murakami Flowers company. It includes details such as the name and address of the company, and the email's purpose and sender. The email also includes a list of boxes labeled with the company's name and the sender's name.
+
+6. From User Experience University — [FREE GIFT]You Were Not Hired to Have Opinions. And That Is Exactly the Problem.
+The issue of the executional trap in UX work involves good practitioners falling into the trap of assuming they need to do the initial problem definition and strategy framing for other teams, rather than focusing on the problem definition and decisions themselves. This results in the execution of tasks without being fully engaged in the decision-making process.
+
+Key points include:
+- The shift in UX work that is changing what it means to be a UX practitioner
+- The new shape of UX influence and influence on how UX practitioners are expected to show up in their work
+- The importance of recognizing and repositioning oneself before being repositioned
+
+Action needed:
+- Recognizing the executional trap and its consequences
+- Staying focused on the problem definition and decisions, rather than just executing tasks
+- Staying true to one's role and responsibilities as a UX practitioner.
+
+7. From Tripo AI — 🎮 Create, Celebrate, Earn: ⚽️World Cup Week in Tripo Community
+Here's a summary of the email in 2-4 sentences:
+
+The Discord community is celebrating the launch of a new feature called Level Up & Get Paid, which offers 1 month of free Max Plan credits to participants. The program also features a Creator Showcase with outstanding works from previous weeks. Additionally, the community can participate in the Tripo Creator Program, which rewards users for creating and sharing their Tripo creations on social media.
+
+8. From OKX — Atualização semanal: Acesso institucional e pausa nos juros
+Seu resumo semanal de cripto inclui:
+
+- Fed mantém juros estáveis em 3,5%–3,75%, enquanto a União Europeia se prepara para a MiCA
+- SEC aprova fundo multiativo para acesso institucional a ativos
+- OKX oferece download do seu aplicativo
+
+Importante: O e-mail menciona a disponibilidade de ferramentas de trading no app da OKX, o que pode ser uma oportunidade para investidores ou traders empreender.
+
+9. From Reserva — Eleve seu visual com até 60% OFF 👕👔
+Descubra camisas e polos no Outlet
+- Objetivo: Promover camisas e polos na loja Outlet.
+- Ferramentas: Camisas e polos, camisa de roupa, calçados, frigideiras, frete, código de desconto, e canais de contato.
+- Propósito: Aumentar a visibilidade e a presença do Outlet em relação à camisas e polos, tornando o empreendimento mais rentável.
+- Ações: 
+- Promover camisas e polos no Outlet na loja.
+- Aumentar a presença em redes sociais.
+- Encorajar os clientes a reservar infantil.
+- Oferecer descontos especiais e incentivos de loja para clientes primeiros.
+
+10. From Liberta Investimentos — O Brasil joga hoje. E você?
+Enquanto a seleção está em campo, os clientes que investiram R$ 1 milhão ou mais na plataforma XP podem receber uma carta de consórcio de R$ 500 mil sem juros, com condições exclusivas durante o período do Mundial. A decisão patrimonial feita durante esse período poderia ser uma pergunta que poucos se fazem no intervalo. A carta pode ser autografada por Stormer ou Ulrich e leva o cliente a uma camiseta oficial da Seleção Brasileira 2026, Nike.
+
+Action Needed:
+- Marcar uma inscrição para receber a carta de consórcio e informações adicionais sobre a carteira.
+
+Important Details:
+- O benefício é exclusivo para clientes que investiram R$ 1 milhão ou mais na plataforma XP.
+- A decisão patrimonial feita durante o período do Mundial poderia ser uma pergunta que poucos se fazem no intervalo.
+- A carta pode ser autografada por Stormer ou Ulrich.
+
+11. From Milk Road — 🥛 Everything’s red... except these 2 assets 🔴
+* Crypto market is experiencing a significant downturn, with Bitcoin down 50% from its October peak and close to $2 trillion.
+* Two crypto-adjacent stocks, Galaxy Digital and Robinhood, have seen significant gains, with Galaxy Digital up 65.1% and Robinhood up 52.6%.
+* These gains are due in part to the launch of Helios, a data center by Galaxy Digital, and the trend of institutional investors using stablecoins for traditional finance, which is driven by Bridge's free guide, ""The Stablecoin Playbook"".
+
+12. From Marty Swant and Alex Kantrowitz from Big Technology — Greg Brockman On OpenAI’s Plan To Win: Compute Rules All
+OpenAI CEO Greg Brockman discussed the importance of investing in AI infrastructure to compete with other companies. He stated that the lab with the most compute will win in the end, as there are only 10 million users and the demand for AI models is still relatively low. The company is raising $122 billion to build its datacenter infrastructure and has a long-term plan to transition from a lab model to a more commercial one.
+
+Action needed: Review and update the company's AI product experience vision to focus on the right form and capabilities.
+
+Important details: The company is investing heavily in its datacenter buildout and plans to transition from a lab model to a commercial one. The goal is to bring AI models closer to the human experience, rather than just providing a machine interface.
+
+13. From Polymarket — Four World Cup Matches Today 🏆
+Here is a summary of the email in 2-4 sentences:
+
+The email announces four World Cup matches with odds on the outcome, ranging from $100 to $1000. Users can pick their side and choose to bet on specific games, with live odds provided at 3:00 PM, 6:00 PM, and 8:30 PM ET. The email also mentions a World Cup combo trade and a cryptocurrency market, with live prices and updates available. Users can place a World Cup combo trade to potentially win a larger payout.
+
+14. From Runpod Team — H100 SXMs just landed in Asia Pacific
+Here is a summary of the email in 2-4 sentences:
+
+The email provides information about the new H100 SXM capacity in the AP-IN-1 region, which includes instant clusters and 1-8 GPU pod configurations. This is part of the company's efforts to provide scalable and flexible computing resources. The email also announces a webinar on June 25 to discuss the hot starts architecture and batch inference. Additionally, there are two flash hacking challenges being held on June 30.
+
+15. From Flexform — Até 50% OFF para transformar seu lar em arquibancada🏟️
+The email is a promotional message from FLEXFORM, a company offering home improvement products, asking users to visit their website to learn more about their services and products. The email is designed to entice users to visit the website. The sender is inviting users to ""reunite"" with family and friends and create a more comfortable home. The email also encourages users to share their experiences and receive discounts on products.
+
+Digest:","**Key Messages:**
+
+• Unread emails:
+  - NYT Cooking: Bowen Yang's mapo tofu recipe
+  - Leandro Ruschel: O que Olavo diria sobre o Brasil de hoje
+  - GOG.COM: 2LHKA4VFRKYHNULUMT expires in 24 HOURS
+  - Duolingo: Lucas Espinosa's progress in English
+  - カイカイキキふるさと納税: Murakami Flowers Trading Card - Akibahara Flowers
+  - User Experience University: [FREE GIFT]
+  - Tripo AI: Level Up & Get Paid
+  - OKX: Acesso institucional e pausa nos juros
+  - Reserva: Eleve seu visual com até 60% OFF
+  - Liberta Investimentos: O Brasil joga hoje
+  - Marty Swant and Alex Kantrowitz: Greg Brockman On OpenAI's Plan To Win: Compute Rules All
+  - Polymarket: Four World Cup Matches Today
+  - Runpod Team: H100 SXMs just landed in Asia Pacific
+  - Flexform: Até 50% OFF para transformar seu lar em arquibancada
+
+**Priority:**
+
+* Unread emails:
+  + Leandro Ruschel: O que Olavo diria sobre o Brasil de hoje ( urgent)
+  + User Experience University: [FREE GIFT] (important)
+  + Polymarket: Four World Cup Matches Today (important)
+* Action needed:
+  + Leandro Ruschel: O que Olavo diria sobre o Brasil de hoje ( reply)
+  + User Experience University: [FREE GIFT] (reply)
+  + Polymarket: Four World Cup Matches Today (reply)
+  + Runpod Team: H100 SXMs just landed in Asia Pacific (reply)
+  + Flexform: Até 50% OFF para transformar seu lar em arquibancada (reply)
+  + Marty Swant and Alex Kantrowitz: Greg Brockman On OpenAI's Plan To Win: Compute Rules All ( reply)
+  + GOG.COM: 2LHKA4VFRKYHNULUMT expires in 24 HOURS (reply)
+  + OKX: Acesso institucional e pausa nos juros (reply)
+  + Reserva: Eleve seu visual com até 60% OFF (reply)
+  + Duolingo: Lucas Espinosa's progress in English (reply)
+  + Marty Swant and Alex Kantrowitz: Greg Brockman On OpenAI's Plan To Win: Compute Rules All (reply)
+  + Liberta Investimentos: O Brasil joga hoje (reply)
+  + Polymarket: Four World Cup Matches Today (reply)
+  + Runpod Team: H100 SXMs just landed in Asia Pacific (reply)
+  + Flexform: Até 50% OFF para transformar seu lar em arquibancada (reply)
+  + User Experience University: [FREE GIFT] (reply)"
+2026-06-20T20:21:51.347Z,completion,actions,Llama 3.2 1B,,,2259,565,460,92,405,1817,64.4,,,"Extract the action items, tasks, deadlines and important dates from this email. Reply with a short bullet list using ""- "". If there are none, reply with exactly: No action items.
+
+Subject: 🥛 Everything’s red... except these 2 assets 🔴
+Email:
+View image: ( 
+Follow image link: ( 
+Caption: 
+
+GM. This is Milk Road, your friend who already read the room so you don't have to.
+
+​Here’s what we’ve got for you today:
+
+* ✍️ Everything’s red… except these two.
+
+* 🎙️ The Milk Road Show: [The Case For Bitcoin As One Of The World’s 4 Most Important Technologies]( 
+
+* 🍪 Coinbase launched the first crypto-backed mortgage.
+
+==Bridge just released a free guide called ====**“The Stablecoin Playbook”**==== that covers the most prominent real-world use cases for stablecoins.====** **==[Download the free guide now.]( 
+
+View image: ( 
+Follow image link: ( 
+Caption: Prices as of 2:00 p.m. ET. Powered by CoinGecko.
+
+View image: ( [breaker]
+Caption: 
+
+# **EVERYTHING'S RED… EXCEPT THESE TWO ASSETS **💪
+
+Crypto's getting hammered.
+
+[Bitcoin]( down about 50% from its October peak of ~$126K - and close to $2T has walked out of crypto since it topped.
+
+Most of the market is some shade of red right now.
+
+But two crypto-adjacent stocks went the other way…
+
+Galaxy Digital ([GLXY]( is up 65.1% since late February, while Robinhood ([HOOD]( is up 52.6%.
+
+Both up double digits while crypto bleeds.
+
+View image: ( 
+Caption: Source: Giphy
+
+**Let’s look at Galaxy first…**
+
+A few weeks back, it got dragged down with everything else, falling about 11% in the selloff even as a run of good news hit.
+
+But the bull case never hung on crypto prices. It came down to Helios - Galaxy's buildout of AI data centers.
+
+Revenue from Helios is set to start landing in Q2, and that's the catalyst expected to re-rate the stock (Wall Street-speak for the market deciding a company's worth more and pricing it up).
+
+On top of that, deal flow picked up…
+
+Morgan Stanley started sending its wealthy clients to Galaxy to swap their crypto for ETP shares, which lets them make the switch from onchain rails, to TradFi rails - without triggering a taxable sale.
+
+Every deal like that adds to the same case: Galaxy as the plu
+
+Action items:","- Review Q1 2023 market performance and identify key indicators.
+- Analyze Galaxy Digital's Helios buildout and revenue growth.
+- Research and discuss potential partnerships with Morgan Stanley for ETP share deals.
+- Develop a plan to capitalize on Galaxy's bull case and ETP share deals.
+- Outline key performance indicators (KPIs) to measure Galaxy's success.
+- Collaborate with relevant stakeholders to build out a comprehensive strategy for Galaxy Digital."
