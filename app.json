@@ -8,7 +8,8 @@
     "scheme": "pouchio",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.0xlucky.auth"
     },
     "android": {
       "adaptiveIcon": {
@@ -34,7 +35,29 @@
             "imageWidth": 76
           }
         }
-      ]
+      ],
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.717557783855-cck6sofhakio0t6ta7fvf3aas0cm5nrl"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static",
+            "extraPods": [
+              { "name": "GoogleUtilities", "modular_headers": true },
+              { "name": "RecaptchaInterop", "modular_headers": true }
+            ]
+          },
+          "android": {
+            "minSdkVersion": 29
+          }
+        }
+      ],
+      "@qvac/sdk/expo-plugin"
     ],
     "experiments": {
       "typedRoutes": true,

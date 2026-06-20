@@ -1,6 +1,9 @@
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
+ * Light-only Duolingo-flavored palette (see `.claude/DESIGN.md`). The app does
+ * not support dark mode — there is a single source of truth for color.
+ *
+ * Other ways to style your app: [Nativewind](https://www.nativewind.dev/),
+ * [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app).
  */
 
 import '@/global.css';
@@ -8,23 +11,36 @@ import '@/global.css';
 import { Platform } from 'react-native';
 
 export const Colors = {
-  light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-  },
-  dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-  },
+  /** Ink — primary text. */
+  text: '#3C3C3C',
+  /** Muted ink for secondary text (≈4.8:1 on white — passes AA). */
+  textSecondary: '#6B6B6B',
+  /** Canvas. */
+  background: '#FFFFFF',
+  /** Surface-1 — cards, search field, chat bubbles. */
+  backgroundElement: '#F7F7F7',
+  /** Light-green selection tint (toggles, active pills). */
+  backgroundSelected: '#D7F0BE',
+  /** Hairline border for cards/buttons. */
+  border: '#E5E5E5',
+
+  /** Duo green — primary CTAs and active/brand elements. */
+  primary: '#58CC02',
+  /** Text on primary green. */
+  onPrimary: '#FFFFFF',
+  /** Darker green used for the 3D button bottom edge. */
+  primaryShadow: '#58A700',
+  /** Sky blue — secondary actions, links, user chat bubble. */
+  secondary: '#1CB0F6',
+  /** Streak orange. */
+  accentOrange: '#FF9600',
+  /** XP gold. */
+  accentYellow: '#FFC800',
+  /** Error / wrong red. */
+  accentRed: '#FF4B4B',
 } as const;
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+export type ThemeColor = keyof typeof Colors;
 
 export const Fonts = Platform.select({
   ios: {

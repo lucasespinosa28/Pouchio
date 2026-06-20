@@ -1,1 +1,4 @@
-export { useColorScheme } from 'react-native';
+/** The app is light-only — dark mode was removed. */
+export function useColorScheme(): 'light' {
+  return 'light';
+}
