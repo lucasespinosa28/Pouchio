@@ -1,0 +1,68 @@
+{
+  "project": "Pouchio",
+  "description": "Every remote/network call Pouchio makes, disclosed for the QVAC Hackathon. No AI inference is performed remotely — all inference (text generation + embeddings/RAG) runs on-device via @qvac/sdk. The only runtime network calls are Google authentication and the Gmail REST API (to read and send the user's mail). The QVAC SDK additionally fetches the AI model files once.",
+  "lastUpdated": "2026-06-20",
+  "remoteCalls": [
+    {
+      "id": "google-oauth",
+      "service": "Google OAuth 2.0 / Google Sign-In",
+      "via": "@react-native-google-signin/google-signin (native)",
+      "hosts": ["accounts.google.com", "oauth2.googleapis.com", "www.googleapis.com"],
+      "purpose": "Authenticate the user and obtain an OAuth access token used to call the Gmail API.",
+      "endpoints": [
+        "GoogleSignin.signIn() / signInSilently() — interactive + silent sign-in",
+        "GoogleSignin.getTokens() — retrieve a fresh access token",
+        "GoogleSignin.signOut()"
+      ],
+      "scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "openid / profile / email (default)"
+      ],
+      "dataSent": "OAuth client ID and requested scopes; standard OAuth handshake. No email content.",
+      "ai": false,
+      "optional": false,
+      "code": "src/hooks/use-google-auth.tsx, src/constants/google.ts"
+    },
+    {
+      "id": "gmail-rest",
+      "service": "Gmail REST API v1",
+      "via": "fetch() in src/lib/gmail.ts",
+      "hosts": ["gmail.googleapis.com"],
+      "baseUrl": "https://gmail.googleapis.com/gmail/v1/users/me",
+      "purpose": "Read the signed-in user's mailbox and send mail. This is the app's core data source; it is NOT used for any AI.",
+      "endpoints": [
+        { "method": "GET", "path": "/profile", "use": "Account email + total message count" },
+        { "method": "GET", "path": "/messages?q=&maxResults=&pageToken=&labelIds=", "use": "List/search inbox (paginated)" },
+        { "method": "GET", "path": "/messages/{id}?format=full|metadata", "use": "Fetch a message's headers/body for the card and reader" },
+        { "method": "POST", "path": "/messages/{id}/modify", "use": "Mark a message read (remove UNREAD label)" },
+        { "method": "POST", "path": "/messages/send", "use": "Send an email (RFC 2822, base64url raw)" }
+      ],
+      "auth": "Bearer access token from google-oauth",
+      "dataSent": "For send: the user-composed message (To/Subject/Body). For reads: query params only.",
+      "ai": false,
+      "optional": false,
+      "code": "src/lib/gmail.ts"
+    },
+    {
+      "id": "qvac-model-assets",
+      "service": "QVAC model asset download",
+      "via": "@qvac/sdk downloadAsset()",
+      "hosts": ["managed by @qvac/sdk (Tether/QVAC asset host)"],
+      "purpose": "One-time download of the local AI model files, after which all inference runs offline on-device.",
+      "assets": [
+        "LLAMA_3_2_1B_INST_Q4_0 (text generation)",
+        "GTE_LARGE_FP16 (text embeddings)"
+      ],
+      "dataSent": "None — model files are downloaded; no user data is uploaded.",
+      "ai": "models for on-device inference (not remote inference)",
+      "optional": false,
+      "code": "src/hooks/use-qvac.tsx (downloadAsset)"
+    }
+  ],
+  "notes": [
+    "No third-party AI/cloud-inference API is used anywhere in the app.",
+    "Once the QVAC models are cached, all AI features keep working with no network (verifiable in airplane mode).",
+    "OAuth client IDs are EXPO_PUBLIC_* values and are public by design for native OAuth clients (no client secret)."
+  ]
+}
