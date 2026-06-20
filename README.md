@@ -1,3 +1,4 @@
+
 # Pouchio 📩
 
 A Gmail client with **on-device AI**. Pouchio reads your inbox and helps you
@@ -6,6 +7,11 @@ a local LLM running on your phone. Your email content never leaves the device.
 
 > Built with Expo (SDK 56) + Expo Router, React Native 0.85 / React 19, and the
 > [QVAC SDK](https://www.npmjs.com/package/@qvac/sdk) for local inference.
+
+<img width="630" height="1368" alt="Captura de Tela 2026-06-20 à(s) 17 11 00" src="https://github.com/user-attachments/assets/d8f291da-ceb8-48eb-9c22-543429fb75c6" />
+<img width="630" height="1368" alt="Captura de Tela 2026-06-20 à(s) 17 11 38" src="https://github.com/user-attachments/assets/d3ddba26-ebb5-467c-ba46-68e5003a735b" />
+<img width="630" height="1368" alt="Captura de Tela 2026-06-20 à(s) 17 13 39" src="https://github.com/user-attachments/assets/e2ed7035-65ee-47e9-a04e-1d5c57e1747e" />
+<img width="630" height="1368" alt="Captura de Tela 2026-06-20 à(s) 17 14 07" src="https://github.com/user-attachments/assets/09604077-4f7f-4907-8d65-3a179bc8c5dc" />
 
 ## Features
 
