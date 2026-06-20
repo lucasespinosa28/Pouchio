@@ -7,8 +7,13 @@
  * directory and dumped to the console (between PERF_EXPORT markers) so an
  * external log-capture script can scrape it off the device.
  *
- * Privacy: prompts contain email-derived text, so we log the prompt's *label*
- * and *size* (chars + an approximate token count), never the prompt content.
+ * Each completion record keeps the full prompt sent to the model and the text
+ * it returned, alongside the size/timing metrics, so the exported bundle is a
+ * complete input→output trace.
+ *
+ * Privacy: prompts are email-derived, so this trace contains email content by
+ * design — it's meant for on-device debugging / the hackathon evidence bundle,
+ * not for sharing externally.
  */
 import * as FileSystem from 'expo-file-system/legacy';
 
@@ -27,6 +32,10 @@ export type CompletionRecord = {
   ts: string;
   label: string;
   model: string;
+  /** Full prompt text sent to the model. */
+  prompt: string;
+  /** Full text the model returned. */
+  output: string;
   promptChars: number;
   promptTokensApprox: number;
   outputChars: number;
@@ -128,6 +137,7 @@ function toCsv(): string {
     'label',
     'model',
     'event',
+    'durationMs',
     'promptChars',
     'promptTokensApprox',
     'outputChars',
@@ -137,8 +147,16 @@ function toCsv(): string {
     'tokensPerSec',
     'inputChars',
     'dims',
+    'prompt',
+    'output',
   ];
-  const cell = (v: unknown) => (v == null ? '' : String(v));
+  // Quote any field containing a comma, quote, or newline (prompt/output text
+  // does), doubling embedded quotes — RFC 4180 escaping.
+  const cell = (v: unknown) => {
+    if (v == null) return '';
+    const s = String(v);
+    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
   const rows = records.map((r) => {
     const o = r as Record<string, unknown>;
     return cols.map((c) => cell(o[c])).join(',');

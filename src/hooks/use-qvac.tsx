@@ -191,7 +191,8 @@ export function QvacProvider({ children }: PropsWithChildren) {
 
       setStatus("downloading");
       setProgress(0);
-      log("qvac", "downloadAsset start");
+      log("qvac", "download start", { model: MODEL_LABEL });
+      const downloadStart = perfNow();
       await downloadAsset({
         assetSrc: LLAMA_3_2_1B_INST_Q4_0,
         onProgress: (p) => {
@@ -199,11 +200,12 @@ export function QvacProvider({ children }: PropsWithChildren) {
           setProgress(Math.round(p.percentage));
         },
       });
-      log("qvac", "downloadAsset done");
+      const downloadMs = Math.round(perfNow() - downloadStart);
+      log("qvac", "download done", { model: MODEL_LABEL, downloadMs });
 
       setStatus("loading");
       setProgress(0);
-      log("qvac", "loadModel start", { device: "gpu", ctx_size: CTX_SIZE });
+      log("qvac", "load start", { model: MODEL_LABEL, device: "gpu", ctx_size: CTX_SIZE });
       const loadStart = perfNow();
       const id = await enqueue(
         () =>
@@ -222,13 +224,19 @@ export function QvacProvider({ children }: PropsWithChildren) {
           }),
         PRIORITY_LOAD,
       );
-      recordModel({ event: "load", model: MODEL_LABEL, durationMs: perfNow() - loadStart });
-      log("qvac", "loadModel done", { modelId: id });
+      const loadMs = Math.round(perfNow() - loadStart);
+      recordModel({ event: "load", model: MODEL_LABEL, durationMs: loadMs });
+      log("qvac", "model ready", {
+        model: MODEL_LABEL,
+        modelId: id,
+        downloadMs,
+        loadMs,
+        totalMs: downloadMs + loadMs,
+      });
 
       modelId.current = id;
       setProgress(null);
       setStatus("ready");
-      log("qvac", "status → ready");
     } catch (e) {
       logError("qvac", e, "(failed during start)");
       setError(
@@ -254,7 +262,8 @@ export function QvacProvider({ children }: PropsWithChildren) {
           log("qvac", "completion skipped (no longer needed)");
           return null;
         }
-        log("qvac", "completion start", { chars: prompt.length });
+        log("qvac", "completion start", { label, promptChars: prompt.length });
+        log("qvac", "prompt in »", { label, prompt });
         const { completion } = await import("@qvac/sdk");
         const result = completion({
           modelId: id,
@@ -283,6 +292,8 @@ export function QvacProvider({ children }: PropsWithChildren) {
         recordCompletion({
           label,
           model: MODEL_LABEL,
+          prompt,
+          output: out,
           promptChars: prompt.length,
           promptTokensApprox: approxTokens(prompt.length),
           outputChars: out.length,
@@ -291,7 +302,15 @@ export function QvacProvider({ children }: PropsWithChildren) {
           totalMs: Math.round(endedAt - startedAt),
           tokensPerSec: tokensPerSec !== null ? Math.round(tokensPerSec * 10) / 10 : null,
         });
-        log("qvac", "completion done", { chars: out.length, tokens, ttftMs, tokensPerSec });
+        log("qvac", "completion done", {
+          label,
+          outputChars: out.length,
+          tokens,
+          ttftMs: ttftMs !== null ? Math.round(ttftMs) : null,
+          totalMs: Math.round(endedAt - startedAt),
+          tokensPerSec: tokensPerSec !== null ? Math.round(tokensPerSec * 10) / 10 : null,
+        });
+        log("qvac", "prompt out «", { label, output: out });
         return out;
       });
     } catch (e) {
@@ -318,11 +337,12 @@ export function QvacProvider({ children }: PropsWithChildren) {
     if (embedLoad.current) return embedLoad.current;
     embedLoad.current = (async () => {
       try {
-        log("qvac", "embeddings: loading model");
+        log("qvac", "embeddings: load start", { model: EMBED_LABEL });
         const { downloadAsset, loadModel, GTE_LARGE_FP16 } =
           await import("@qvac/sdk");
         setEmbeddingStatus("downloading");
         setEmbeddingProgress(0);
+        const embedDownloadStart = perfNow();
         await downloadAsset({
           assetSrc: GTE_LARGE_FP16,
           onProgress: (p) => {
@@ -330,6 +350,8 @@ export function QvacProvider({ children }: PropsWithChildren) {
             setEmbeddingProgress(Math.round(p.percentage));
           },
         });
+        const embedDownloadMs = Math.round(perfNow() - embedDownloadStart);
+        log("qvac", "embeddings: download done", { model: EMBED_LABEL, downloadMs: embedDownloadMs });
         setEmbeddingStatus("loading");
         setEmbeddingProgress(0);
         const embedLoadStart = perfNow();
@@ -345,11 +367,18 @@ export function QvacProvider({ children }: PropsWithChildren) {
             }),
           PRIORITY_LOAD,
         );
-        recordModel({ event: "load", model: EMBED_LABEL, durationMs: perfNow() - embedLoadStart });
+        const embedLoadMs = Math.round(perfNow() - embedLoadStart);
+        recordModel({ event: "load", model: EMBED_LABEL, durationMs: embedLoadMs });
         embedModelId.current = id;
         setEmbeddingProgress(null);
         setEmbeddingStatus("ready");
-        log("qvac", "embeddings: ready", { id });
+        log("qvac", "embeddings: ready", {
+          model: EMBED_LABEL,
+          id,
+          downloadMs: embedDownloadMs,
+          loadMs: embedLoadMs,
+          totalMs: embedDownloadMs + embedLoadMs,
+        });
         return id;
       } catch (e) {
         logError("qvac", e, "(embeddings load failed)");
