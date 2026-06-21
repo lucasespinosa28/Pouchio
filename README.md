@@ -7,6 +7,9 @@ a local LLM running on your phone. Your email content never leaves the device.
 
 > Built with Expo (SDK 56) + Expo Router, React Native 0.85 / React 19, and the
 > [QVAC SDK](https://www.npmjs.com/package/@qvac/sdk) for local inference.
+### [Demo video](https://www.youtube.com/shorts/aD8F_IOpMLw?feature=share)
+
+> The demo video and the screenshots below were captured on an **iPhone Air**.
 
 <table>
   <tr>
@@ -142,9 +145,9 @@ sent to any third-party AI service.
 ## Reproducibility & test hardware
 
 All AI in Pouchio runs **on-device**. The build below was developed and demoed on
-a single retail phone — no cloud inference, no compute cluster.
+a single retail phone — an **iPhone Air** — no cloud inference, no compute cluster.
 
-**Test device (one line per spec):**
+**Test device — iPhone Air (one line per spec):**
 
 - **CPU:** Hexa-core, with 2 performance cores at 4.26 GHz and 4 efficiency cores.
 - **GPU:** Apple GPU with 5 cores.
